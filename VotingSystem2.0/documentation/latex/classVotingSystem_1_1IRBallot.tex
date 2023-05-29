@@ -1,0 +1,138 @@
+\hypertarget{classVotingSystem_1_1IRBallot}{}\doxysection{Voting\+System\+::IRBallot Class Reference}
+\label{classVotingSystem_1_1IRBallot}\index{VotingSystem::IRBallot@{VotingSystem::IRBallot}}
+
+
+A basic \mbox{\hyperlink{classVotingSystem_1_1IRBallot}{IRBallot}} class that inherits from \mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}}.  
+
+
+
+
+{\ttfamily \#include $<$IRBallot.\+h$>$}
+
+
+
+Inheritance diagram for Voting\+System\+::IRBallot\+:
+% FIG 0
+
+
+Collaboration diagram for Voting\+System\+::IRBallot\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVotingSystem_1_1IRBallot_a395a5a91c5fd4b5eb8f1a85a61c09b1d}{IRBallot}} (int id)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVotingSystem_1_1IRBallot}{IRBallot}} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVotingSystem_1_1IRBallot_aa0004752b88eea26be2c46c674184d8e}{$\sim$\+IRBallot}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVotingSystem_1_1IRBallot}{IRBallot}} destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$ \mbox{\hyperlink{classVotingSystem_1_1IRBallot_a364cfdfc88fa47b6e7d771f2fe8e4c0c}{get\+Candidate}} ()
+\begin{DoxyCompactList}\small\item\em candidate getter \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classVotingSystem_1_1IRBallot_a000f27fea74e1a926803021ca2ef9767}{get\+Curr\+Candidate\+Idx}} ()
+\begin{DoxyCompactList}\small\item\em curr\+Candidate\+Idx\+\_\+ getter method \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1IRBallot_a0e0a20f291df284d7f7334c3fb11473a}{next\+Candidate}} ()
+\begin{DoxyCompactList}\small\item\em increments curr\+Candidate\+Idx by 1 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classVotingSystem_1_1IRBallot_ae663244563f6917db64aa7bb5e3564ed}{curr\+Candidate\+Idx\+\_\+}}
+\begin{DoxyCompactList}\small\item\em stores an index into ranked\+Candidates\+\_\+ vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A basic \mbox{\hyperlink{classVotingSystem_1_1IRBallot}{IRBallot}} class that inherits from \mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}}. 
+
+Contains an ID integer, as well as a vector of \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} pointers. In IR, the candidates are meant to be ranked by the voter\textquotesingle{}s preference. In OPL, since the rules state each ballot only votes for one candidate, the vector would only contain one entry. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1IRBallot_a395a5a91c5fd4b5eb8f1a85a61c09b1d}\label{classVotingSystem_1_1IRBallot_a395a5a91c5fd4b5eb8f1a85a61c09b1d}} 
+\index{VotingSystem::IRBallot@{VotingSystem::IRBallot}!IRBallot@{IRBallot}}
+\index{IRBallot@{IRBallot}!VotingSystem::IRBallot@{VotingSystem::IRBallot}}
+\doxysubsubsection{\texorpdfstring{IRBallot()}{IRBallot()}}
+{\footnotesize\ttfamily Voting\+System\+::\+IRBallot\+::\+IRBallot (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classVotingSystem_1_1IRBallot}{IRBallot}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & an integer which contains \mbox{\hyperlink{classVotingSystem_1_1IRBallot}{IRBallot}}\textquotesingle{}s ID. Intended to be unique to ballot \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Sets ballot\textquotesingle{}s id\+\_\+ attribute to id, and creates an empty ranked\+Candidates\+\_\+ vector, to store candidates. Sets curr\+Candidate\+Idx\+\_\+ to 0 \mbox{\Hypertarget{classVotingSystem_1_1IRBallot_aa0004752b88eea26be2c46c674184d8e}\label{classVotingSystem_1_1IRBallot_aa0004752b88eea26be2c46c674184d8e}} 
+\index{VotingSystem::IRBallot@{VotingSystem::IRBallot}!````~IRBallot@{$\sim$IRBallot}}
+\index{````~IRBallot@{$\sim$IRBallot}!VotingSystem::IRBallot@{VotingSystem::IRBallot}}
+\doxysubsubsection{\texorpdfstring{$\sim$IRBallot()}{~IRBallot()}}
+{\footnotesize\ttfamily Voting\+System\+::\+IRBallot\+::$\sim$\+IRBallot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classVotingSystem_1_1IRBallot}{IRBallot}} destructor. 
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Does not delete the candidates in the candidates vector. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1IRBallot_a364cfdfc88fa47b6e7d771f2fe8e4c0c}\label{classVotingSystem_1_1IRBallot_a364cfdfc88fa47b6e7d771f2fe8e4c0c}} 
+\index{VotingSystem::IRBallot@{VotingSystem::IRBallot}!getCandidate@{getCandidate}}
+\index{getCandidate@{getCandidate}!VotingSystem::IRBallot@{VotingSystem::IRBallot}}
+\doxysubsubsection{\texorpdfstring{getCandidate()}{getCandidate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVotingSystem_1_1Candidate}{VS\+::\+Candidate}} $\ast$ Voting\+System\+::\+IRBallot\+::get\+Candidate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+candidate getter 
+
+\begin{DoxyReturn}{Returns}
+The candidate at curr\+Candidate\+\_\+ index
+\end{DoxyReturn}
+If curr\+Candidate\+Idx\+\_\+ is out of range, returns a nullptr \mbox{\Hypertarget{classVotingSystem_1_1IRBallot_a000f27fea74e1a926803021ca2ef9767}\label{classVotingSystem_1_1IRBallot_a000f27fea74e1a926803021ca2ef9767}} 
+\index{VotingSystem::IRBallot@{VotingSystem::IRBallot}!getCurrCandidateIdx@{getCurrCandidateIdx}}
+\index{getCurrCandidateIdx@{getCurrCandidateIdx}!VotingSystem::IRBallot@{VotingSystem::IRBallot}}
+\doxysubsubsection{\texorpdfstring{getCurrCandidateIdx()}{getCurrCandidateIdx()}}
+{\footnotesize\ttfamily unsigned int Voting\+System\+::\+IRBallot\+::get\+Curr\+Candidate\+Idx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+curr\+Candidate\+Idx\+\_\+ getter method 
+
+\begin{DoxyReturn}{Returns}
+curr\+Candidate\+Idx\+\_\+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1IRBallot_a0e0a20f291df284d7f7334c3fb11473a}\label{classVotingSystem_1_1IRBallot_a0e0a20f291df284d7f7334c3fb11473a}} 
+\index{VotingSystem::IRBallot@{VotingSystem::IRBallot}!nextCandidate@{nextCandidate}}
+\index{nextCandidate@{nextCandidate}!VotingSystem::IRBallot@{VotingSystem::IRBallot}}
+\doxysubsubsection{\texorpdfstring{nextCandidate()}{nextCandidate()}}
+{\footnotesize\ttfamily int Voting\+System\+::\+IRBallot\+::next\+Candidate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+increments curr\+Candidate\+Idx by 1 
+
+\begin{DoxyReturn}{Returns}
+1 if curr\+Candidate\+Idx incremented succesfully, else 0
+\end{DoxyReturn}
+Does not increment if such an increment would produce an index which is out of bounds of the current ranked\+Candidate\+\_\+\textquotesingle{}s size 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1IRBallot_ae663244563f6917db64aa7bb5e3564ed}\label{classVotingSystem_1_1IRBallot_ae663244563f6917db64aa7bb5e3564ed}} 
+\index{VotingSystem::IRBallot@{VotingSystem::IRBallot}!currCandidateIdx\_@{currCandidateIdx\_}}
+\index{currCandidateIdx\_@{currCandidateIdx\_}!VotingSystem::IRBallot@{VotingSystem::IRBallot}}
+\doxysubsubsection{\texorpdfstring{currCandidateIdx\_}{currCandidateIdx\_}}
+{\footnotesize\ttfamily unsigned int Voting\+System\+::\+IRBallot\+::curr\+Candidate\+Idx\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+stores an index into ranked\+Candidates\+\_\+ vector. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/kevin/\+Desktop/repo-\/\+Team14/\+Project2/src/include/\mbox{\hyperlink{IRBallot_8h}{IRBallot.\+h}}\item 
+/mnt/c/\+Users/kevin/\+Desktop/repo-\/\+Team14/\+Project2/src/\mbox{\hyperlink{IRBallot_8cpp}{IRBallot.\+cpp}}\end{DoxyCompactItemize}

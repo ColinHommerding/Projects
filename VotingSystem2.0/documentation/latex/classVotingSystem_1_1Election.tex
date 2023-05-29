@@ -1,0 +1,554 @@
+\hypertarget{classVotingSystem_1_1Election}{}\doxysection{Voting\+System\+::Election Class Reference}
+\label{classVotingSystem_1_1Election}\index{VotingSystem::Election@{VotingSystem::Election}}
+
+
+An \mbox{\hyperlink{classVotingSystem_1_1Election}{Election}} class which can be inherited for \mbox{\hyperlink{classVotingSystem_1_1IRElection}{IRElection}} and \mbox{\hyperlink{classVotingSystem_1_1OPLElection}{OPLElection}}.  
+
+
+
+
+{\ttfamily \#include $<$Election.\+h$>$}
+
+
+
+Inheritance diagram for Voting\+System\+::Election\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVotingSystem_1_1Election_a5a64b4460ab2e32821bba01b76ac3d19}{Election}} (std\+::string el\+Name, std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{main_8cpp_a0695804b4a1f9cf9f3da28ac4a9c638e}{filenames\+\_\+vec}}, int debug)
+\begin{DoxyCompactList}\small\item\em Constructor that initialize \mbox{\hyperlink{classVotingSystem_1_1Election}{Election}}. It will be overrided in both \mbox{\hyperlink{IRElection_8cpp}{IRElection.\+cpp}} and \mbox{\hyperlink{OPLElection_8cpp}{OPLElection.\+cpp}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVotingSystem_1_1Election_ad93d4abf0ded46fbeeb20ca35f846f14}{$\sim$\+Election}} ()
+\begin{DoxyCompactList}\small\item\em Destructor that delete this object when it goes out of scope. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classVotingSystem_1_1Election_af7b3244810ae699afd4ae4baf8057a2d}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get election name. \end{DoxyCompactList}\item 
+time\+\_\+t \mbox{\hyperlink{classVotingSystem_1_1Election_ad0e8023833812eef6cf03c6edb50d5ff}{get\+Date}} ()
+\begin{DoxyCompactList}\small\item\em Get election date. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$ $>$ \mbox{\hyperlink{classVotingSystem_1_1Election_ad1c9985d057c9ef87598130435c66834}{get\+Candidates\+List}} ()
+\begin{DoxyCompactList}\small\item\em get the candidate\+List that contains all the candidates in this election. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}} $\ast$ $>$ \mbox{\hyperlink{classVotingSystem_1_1Election_a7a146703f223e5d8708eb89f427118bd}{get\+Ballots\+List}} ()
+\begin{DoxyCompactList}\small\item\em get the ballots\+List that contains all the ballots in this election. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$ $>$ \mbox{\hyperlink{classVotingSystem_1_1Election_a3a8c686663014d98af09dd9648d61430}{get\+Winners}} ()
+\begin{DoxyCompactList}\small\item\em get the winners of this election \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVotingSystem_1_1Election_a019d95188c8f3d6ea2ea74c388e3e962}{run}} ()=0
+\begin{DoxyCompactList}\small\item\em Run the entire election. It will be the main driver of the actions within the election class. It will be overrided in both \mbox{\hyperlink{IRElection_8cpp}{IRElection.\+cpp}} and \mbox{\hyperlink{OPLElection_8cpp}{OPLElection.\+cpp}}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ \mbox{\hyperlink{classVotingSystem_1_1Election_ad99b3358df47d69ad3522f79b453512e}{coin\+Flip}} (std\+::vector$<$ T $\ast$ $>$ tied\+Entities)
+\begin{DoxyCompactList}\small\item\em It will take in an vector of multiple pointers as the parameter. Then will use random number generation to randomly select an index in the vector and return the object at that index. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classVotingSystem_1_1Election_a105ecb4c32caaa881145464441cc0c59}{check\+\_\+header\+\_\+consistency}} ()=0
+\begin{DoxyCompactList}\small\item\em verifys the input files have the same header,otherwise the election will not be run. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVotingSystem_1_1Election_a80ccb7a8c3e1b092e1666cea16c2b7c3}{read\+Header}} (int fileno)=0
+\begin{DoxyCompactList}\small\item\em Read each input file\textquotesingle{}s header and parse useful information. It will be overrided in both \mbox{\hyperlink{IRElection_8cpp}{IRElection.\+cpp}} and \mbox{\hyperlink{OPLElection_8cpp}{OPLElection.\+cpp}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVotingSystem_1_1Election_a677cc98656c59a32a53838cd84b2a082}{verify\+Info}} ()=0
+\begin{DoxyCompactList}\small\item\em verifys the important information before proceed. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVotingSystem_1_1Election_aeb742000c233bd079d8a296f26fd9f3a}{generate\+Media\+File}} ()=0
+\begin{DoxyCompactList}\small\item\em Creates the media file according to the results of the election. It will be overrided in both \mbox{\hyperlink{IRElection_8cpp}{IRElection.\+cpp}} and \mbox{\hyperlink{OPLElection_8cpp}{OPLElection.\+cpp}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVotingSystem_1_1Election_aa3fbaaffe23e87ccf965517143add9e6}{generate\+Term\+Output}} ()=0
+\begin{DoxyCompactList}\small\item\em Prints the preliminary results of the election to the screen. It will be overrided in both \mbox{\hyperlink{IRElection_8cpp}{IRElection.\+cpp}} and \mbox{\hyperlink{OPLElection_8cpp}{OPLElection.\+cpp}}. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classVotingSystem_1_1Election_a6d300ca4795e87cb76936439d40efab3}{get\+Ballot\+Num}} ()
+\begin{DoxyCompactList}\small\item\em get total ballot Number in election. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classVotingSystem_1_1Election_a170d18030a618a87740fa42c2af1105f}{get\+Candidate\+Num}} ()
+\begin{DoxyCompactList}\small\item\em get total candiate Number in election. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVotingSystem_1_1Election_a2ca767d2e18fb2c7a0d9ff699440261b}{remove\+Audit\+File}} ()
+\begin{DoxyCompactList}\small\item\em remove\+Audit\+File. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$ $>$ \mbox{\hyperlink{classVotingSystem_1_1Election_a453fc58913ea220153d70c368dd21cca}{winners\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Vector of candidates that wins this election. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1OPLParty}{OPLParty}} $\ast$ $>$ \mbox{\hyperlink{classVotingSystem_1_1Election_aef84132f62366c1635d67779a22f8b56}{party\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Vector of all parties in this election. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1OPLParty}{OPLParty}} $\ast$ $>$ \mbox{\hyperlink{classVotingSystem_1_1Election_a9b5cd30b8ee1d2e16da8fc5daa65d9aa}{alphabet\+Party\+List\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Vector of party in alphabet order. \end{DoxyCompactList}\item 
+std\+::ifstream \mbox{\hyperlink{classVotingSystem_1_1Election_ad78be0a43d885de3f47023ca2b128db2}{input\+File\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Input file ifstream. \end{DoxyCompactList}\item 
+std\+::ofstream \mbox{\hyperlink{classVotingSystem_1_1Election_ae723f8b12bd87967479cebeb84232c92}{audit\+File\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Audit file ofstream. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1Election_a6afedcd3d110d10b8f4fd8567c8a528f}{num\+Candidates\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Number of candidates in this election. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1Election_a339632f49e40454dffaee55f528658eb}{num\+Ballots\+\_\+}} = 0
+\begin{DoxyCompactList}\small\item\em Total number of Ballots in this election. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classVotingSystem_1_1Election_a489c4e947299c6ec291ae322e8ed1711}{election\+Name\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Name of this election. \end{DoxyCompactList}\item 
+time\+\_\+t \mbox{\hyperlink{classVotingSystem_1_1Election_aeaf66bf8f633c7bf312cef84374ab02a}{election\+Date\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Date of this election runs. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classVotingSystem_1_1Election_a8a78deb3bf849f0bb4c4b5833e762ce8}{election\+Type\+\_\+}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVotingSystem_1_1Election}{Election}} type, either IR, OPL or PO for now. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$ $>$ \mbox{\hyperlink{classVotingSystem_1_1Election_af60ad2ed78302d8de1e4bbcdc20f69f7}{candidates\+List\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Vector of candidate in this election. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$ $>$ \mbox{\hyperlink{classVotingSystem_1_1Election_a3b11f3ec84798ffd8e355c69a3da82ea}{alphabet\+Candidates\+List\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Vector of candidate in alphabet order. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}} $\ast$ $>$ \mbox{\hyperlink{classVotingSystem_1_1Election_a974609518a6246b03ab3d2ee37d02ba8}{ballots\+List\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Vector of all ballots in this elction. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1Election_a5688f8a44138571efd528ab5588fbb83}{debug\+Mode\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Debug mode for testers. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1Election_abf0624b122107e5f7fce4fc5911852d0}{num\+Files\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Number of files read in. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classVotingSystem_1_1Election_abb390cee5efff8f72538215fbc444775}{filenames\+\_\+}}
+\item 
+int \mbox{\hyperlink{classVotingSystem_1_1Election_a028146009637f4dfe38a9cd0db18b125}{recent\+File\+Ballots\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \mbox{\hyperlink{classVotingSystem_1_1Election_a2b71d0546b2412da9ab8f3e6739c80bf}{seed\+\_\+}} = time(NULL)
+\begin{DoxyCompactList}\small\item\em Attribute that used for coin\+Flip. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An \mbox{\hyperlink{classVotingSystem_1_1Election}{Election}} class which can be inherited for \mbox{\hyperlink{classVotingSystem_1_1IRElection}{IRElection}} and \mbox{\hyperlink{classVotingSystem_1_1OPLElection}{OPLElection}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a5a64b4460ab2e32821bba01b76ac3d19}\label{classVotingSystem_1_1Election_a5a64b4460ab2e32821bba01b76ac3d19}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!Election@{Election}}
+\index{Election@{Election}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{Election()}{Election()}}
+{\footnotesize\ttfamily Voting\+System\+::\+Election\+::\+Election (\begin{DoxyParamCaption}\item[{std\+::string}]{el\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{filenames\+\_\+vec,  }\item[{int}]{debug }\end{DoxyParamCaption})}
+
+
+
+Constructor that initialize \mbox{\hyperlink{classVotingSystem_1_1Election}{Election}}. It will be overrided in both \mbox{\hyperlink{IRElection_8cpp}{IRElection.\+cpp}} and \mbox{\hyperlink{OPLElection_8cpp}{OPLElection.\+cpp}}. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{IRElection_8h}{IRElection.\+h}} 
+
+\mbox{\hyperlink{OPLElection_8h}{OPLElection.\+h}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em el\+Name} & election name \\
+\hline
+{\em filename\+\_\+vec} & vector containing all input file names \\
+\hline
+{\em debug} & debug mode \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Election_ad93d4abf0ded46fbeeb20ca35f846f14}\label{classVotingSystem_1_1Election_ad93d4abf0ded46fbeeb20ca35f846f14}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!````~Election@{$\sim$Election}}
+\index{````~Election@{$\sim$Election}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{$\sim$Election()}{~Election()}}
+{\footnotesize\ttfamily Voting\+System\+::\+Election\+::$\sim$\+Election (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor that delete this object when it goes out of scope. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a105ecb4c32caaa881145464441cc0c59}\label{classVotingSystem_1_1Election_a105ecb4c32caaa881145464441cc0c59}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!check\_header\_consistency@{check\_header\_consistency}}
+\index{check\_header\_consistency@{check\_header\_consistency}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{check\_header\_consistency()}{check\_header\_consistency()}}
+{\footnotesize\ttfamily virtual bool Voting\+System\+::\+Election\+::check\+\_\+header\+\_\+consistency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+verifys the input files have the same header,otherwise the election will not be run. 
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classVotingSystem_1_1IRElection_a6679033ce10426dac3403d518fdba0c3}{Voting\+System\+::\+IRElection}}, \mbox{\hyperlink{classVotingSystem_1_1OPLElection_ad1ff7a0519a58d6986cb4a2525f49c88}{Voting\+System\+::\+OPLElection}}, and \mbox{\hyperlink{classVotingSystem_1_1POElection_a2e306b8ae3ca23231d20fbea6192a064}{Voting\+System\+::\+POElection}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_ad99b3358df47d69ad3522f79b453512e}\label{classVotingSystem_1_1Election_ad99b3358df47d69ad3522f79b453512e}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!coinFlip@{coinFlip}}
+\index{coinFlip@{coinFlip}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{coinFlip()}{coinFlip()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T$\ast$ Voting\+System\+::\+Election\+::coin\+Flip (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $\ast$ $>$}]{tied\+Entities }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+It will take in an vector of multiple pointers as the parameter. Then will use random number generation to randomly select an index in the vector and return the object at that index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tied\+Entities} & an vector of multiple pointers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an randomly chosen object from input vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Election_aeb742000c233bd079d8a296f26fd9f3a}\label{classVotingSystem_1_1Election_aeb742000c233bd079d8a296f26fd9f3a}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!generateMediaFile@{generateMediaFile}}
+\index{generateMediaFile@{generateMediaFile}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{generateMediaFile()}{generateMediaFile()}}
+{\footnotesize\ttfamily virtual void Voting\+System\+::\+Election\+::generate\+Media\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Creates the media file according to the results of the election. It will be overrided in both \mbox{\hyperlink{IRElection_8cpp}{IRElection.\+cpp}} and \mbox{\hyperlink{OPLElection_8cpp}{OPLElection.\+cpp}}. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classVotingSystem_1_1IRElection_ac82a82a54cb8e19d72ee58d95e24a4d1}{Voting\+System\+::\+IRElection}}, \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a10da8a5691fdafa5ea7e66ba12dbb21d}{Voting\+System\+::\+OPLElection}}, and \mbox{\hyperlink{classVotingSystem_1_1POElection_ad1bae8c37f068497202d77d0e96b7d51}{Voting\+System\+::\+POElection}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_aa3fbaaffe23e87ccf965517143add9e6}\label{classVotingSystem_1_1Election_aa3fbaaffe23e87ccf965517143add9e6}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!generateTermOutput@{generateTermOutput}}
+\index{generateTermOutput@{generateTermOutput}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{generateTermOutput()}{generateTermOutput()}}
+{\footnotesize\ttfamily virtual void Voting\+System\+::\+Election\+::generate\+Term\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Prints the preliminary results of the election to the screen. It will be overrided in both \mbox{\hyperlink{IRElection_8cpp}{IRElection.\+cpp}} and \mbox{\hyperlink{OPLElection_8cpp}{OPLElection.\+cpp}}. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classVotingSystem_1_1IRElection_a181d15deb16a985540208c73e0b526da}{Voting\+System\+::\+IRElection}}, \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a5e9050c52b53e8fd4d88a7a5713a7301}{Voting\+System\+::\+OPLElection}}, and \mbox{\hyperlink{classVotingSystem_1_1POElection_aefeab2600e1f3dc15678e1734157b4ee}{Voting\+System\+::\+POElection}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a6d300ca4795e87cb76936439d40efab3}\label{classVotingSystem_1_1Election_a6d300ca4795e87cb76936439d40efab3}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!getBallotNum@{getBallotNum}}
+\index{getBallotNum@{getBallotNum}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{getBallotNum()}{getBallotNum()}}
+{\footnotesize\ttfamily virtual int Voting\+System\+::\+Election\+::get\+Ballot\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+get total ballot Number in election. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a7a146703f223e5d8708eb89f427118bd}\label{classVotingSystem_1_1Election_a7a146703f223e5d8708eb89f427118bd}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!getBallotsList@{getBallotsList}}
+\index{getBallotsList@{getBallotsList}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{getBallotsList()}{getBallotsList()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}} $\ast$$>$ Voting\+System\+::\+Election\+::get\+Ballots\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the ballots\+List that contains all the ballots in this election. 
+
+\begin{DoxyReturn}{Returns}
+ballots\+List\+\_\+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a170d18030a618a87740fa42c2af1105f}\label{classVotingSystem_1_1Election_a170d18030a618a87740fa42c2af1105f}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!getCandidateNum@{getCandidateNum}}
+\index{getCandidateNum@{getCandidateNum}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{getCandidateNum()}{getCandidateNum()}}
+{\footnotesize\ttfamily virtual int Voting\+System\+::\+Election\+::get\+Candidate\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+get total candiate Number in election. 
+
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Election_ad1c9985d057c9ef87598130435c66834}\label{classVotingSystem_1_1Election_ad1c9985d057c9ef87598130435c66834}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!getCandidatesList@{getCandidatesList}}
+\index{getCandidatesList@{getCandidatesList}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{getCandidatesList()}{getCandidatesList()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$$>$ Voting\+System\+::\+Election\+::get\+Candidates\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the candidate\+List that contains all the candidates in this election. 
+
+\begin{DoxyReturn}{Returns}
+candidate\+List 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Election_ad0e8023833812eef6cf03c6edb50d5ff}\label{classVotingSystem_1_1Election_ad0e8023833812eef6cf03c6edb50d5ff}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!getDate@{getDate}}
+\index{getDate@{getDate}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{getDate()}{getDate()}}
+{\footnotesize\ttfamily time\+\_\+t Voting\+System\+::\+Election\+::get\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get election date. 
+
+\begin{DoxyReturn}{Returns}
+election date 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Election_af7b3244810ae699afd4ae4baf8057a2d}\label{classVotingSystem_1_1Election_af7b3244810ae699afd4ae4baf8057a2d}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!getName@{getName}}
+\index{getName@{getName}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Voting\+System\+::\+Election\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get election name. 
+
+\begin{DoxyReturn}{Returns}
+election name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a3a8c686663014d98af09dd9648d61430}\label{classVotingSystem_1_1Election_a3a8c686663014d98af09dd9648d61430}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!getWinners@{getWinners}}
+\index{getWinners@{getWinners}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{getWinners()}{getWinners()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$$>$ Voting\+System\+::\+Election\+::get\+Winners (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the winners of this election 
+
+\begin{DoxyReturn}{Returns}
+list of winners 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a80ccb7a8c3e1b092e1666cea16c2b7c3}\label{classVotingSystem_1_1Election_a80ccb7a8c3e1b092e1666cea16c2b7c3}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!readHeader@{readHeader}}
+\index{readHeader@{readHeader}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{readHeader()}{readHeader()}}
+{\footnotesize\ttfamily virtual void Voting\+System\+::\+Election\+::read\+Header (\begin{DoxyParamCaption}\item[{int}]{fileno }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Read each input file\textquotesingle{}s header and parse useful information. It will be overrided in both \mbox{\hyperlink{IRElection_8cpp}{IRElection.\+cpp}} and \mbox{\hyperlink{OPLElection_8cpp}{OPLElection.\+cpp}}. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classVotingSystem_1_1IRElection_aafd99dcd6543dc0c3c58888cc717485c}{Voting\+System\+::\+IRElection}}, \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a530a6a694d765a9c2bb391a125c8a18c}{Voting\+System\+::\+OPLElection}}, and \mbox{\hyperlink{classVotingSystem_1_1POElection_ac83d493c5abdb99d6ce82c15e4313a34}{Voting\+System\+::\+POElection}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a2ca767d2e18fb2c7a0d9ff699440261b}\label{classVotingSystem_1_1Election_a2ca767d2e18fb2c7a0d9ff699440261b}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!removeAuditFile@{removeAuditFile}}
+\index{removeAuditFile@{removeAuditFile}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{removeAuditFile()}{removeAuditFile()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+Election\+::remove\+Audit\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+remove\+Audit\+File. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a019d95188c8f3d6ea2ea74c388e3e962}\label{classVotingSystem_1_1Election_a019d95188c8f3d6ea2ea74c388e3e962}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!run@{run}}
+\index{run@{run}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily virtual void Voting\+System\+::\+Election\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Run the entire election. It will be the main driver of the actions within the election class. It will be overrided in both \mbox{\hyperlink{IRElection_8cpp}{IRElection.\+cpp}} and \mbox{\hyperlink{OPLElection_8cpp}{OPLElection.\+cpp}}. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{IRElection_8h}{IRElection.\+h}} 
+
+\mbox{\hyperlink{OPLElection_8h}{OPLElection.\+h}} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classVotingSystem_1_1IRElection_abc4161143eace6ad7dfde4c2b623de57}{Voting\+System\+::\+IRElection}}, \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a6abd6eeae25561344138c6eda56d4436}{Voting\+System\+::\+OPLElection}}, and \mbox{\hyperlink{classVotingSystem_1_1POElection_aaa81992c96b0c27905aeeaefbec90020}{Voting\+System\+::\+POElection}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a677cc98656c59a32a53838cd84b2a082}\label{classVotingSystem_1_1Election_a677cc98656c59a32a53838cd84b2a082}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!verifyInfo@{verifyInfo}}
+\index{verifyInfo@{verifyInfo}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{verifyInfo()}{verifyInfo()}}
+{\footnotesize\ttfamily virtual void Voting\+System\+::\+Election\+::verify\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+verifys the important information before proceed. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classVotingSystem_1_1IRElection_a6d4888a8ef0f73d84991624b5eb5c385}{Voting\+System\+::\+IRElection}}, \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a462fdfc7dc0665f93d2060428eb77326}{Voting\+System\+::\+OPLElection}}, and \mbox{\hyperlink{classVotingSystem_1_1POElection_a1ad8b130c0d8659665c49a7f028ebd24}{Voting\+System\+::\+POElection}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a3b11f3ec84798ffd8e355c69a3da82ea}\label{classVotingSystem_1_1Election_a3b11f3ec84798ffd8e355c69a3da82ea}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!alphabetCandidatesList\_@{alphabetCandidatesList\_}}
+\index{alphabetCandidatesList\_@{alphabetCandidatesList\_}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{alphabetCandidatesList\_}{alphabetCandidatesList\_}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$$>$ Voting\+System\+::\+Election\+::alphabet\+Candidates\+List\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Vector of candidate in alphabet order. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a9b5cd30b8ee1d2e16da8fc5daa65d9aa}\label{classVotingSystem_1_1Election_a9b5cd30b8ee1d2e16da8fc5daa65d9aa}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!alphabetPartyList\_@{alphabetPartyList\_}}
+\index{alphabetPartyList\_@{alphabetPartyList\_}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{alphabetPartyList\_}{alphabetPartyList\_}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVotingSystem_1_1OPLParty}{OPLParty}} $\ast$$>$ Voting\+System\+::\+Election\+::alphabet\+Party\+List\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Vector of party in alphabet order. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_ae723f8b12bd87967479cebeb84232c92}\label{classVotingSystem_1_1Election_ae723f8b12bd87967479cebeb84232c92}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!auditFile\_@{auditFile\_}}
+\index{auditFile\_@{auditFile\_}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{auditFile\_}{auditFile\_}}
+{\footnotesize\ttfamily std\+::ofstream Voting\+System\+::\+Election\+::audit\+File\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Audit file ofstream. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a974609518a6246b03ab3d2ee37d02ba8}\label{classVotingSystem_1_1Election_a974609518a6246b03ab3d2ee37d02ba8}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!ballotsList\_@{ballotsList\_}}
+\index{ballotsList\_@{ballotsList\_}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{ballotsList\_}{ballotsList\_}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}} $\ast$$>$ Voting\+System\+::\+Election\+::ballots\+List\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Vector of all ballots in this elction. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_af60ad2ed78302d8de1e4bbcdc20f69f7}\label{classVotingSystem_1_1Election_af60ad2ed78302d8de1e4bbcdc20f69f7}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!candidatesList\_@{candidatesList\_}}
+\index{candidatesList\_@{candidatesList\_}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{candidatesList\_}{candidatesList\_}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$$>$ Voting\+System\+::\+Election\+::candidates\+List\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Vector of candidate in this election. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a5688f8a44138571efd528ab5588fbb83}\label{classVotingSystem_1_1Election_a5688f8a44138571efd528ab5588fbb83}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!debugMode\_@{debugMode\_}}
+\index{debugMode\_@{debugMode\_}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{debugMode\_}{debugMode\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+Election\+::debug\+Mode\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Debug mode for testers. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_aeaf66bf8f633c7bf312cef84374ab02a}\label{classVotingSystem_1_1Election_aeaf66bf8f633c7bf312cef84374ab02a}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!electionDate\_@{electionDate\_}}
+\index{electionDate\_@{electionDate\_}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{electionDate\_}{electionDate\_}}
+{\footnotesize\ttfamily time\+\_\+t Voting\+System\+::\+Election\+::election\+Date\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Date of this election runs. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a489c4e947299c6ec291ae322e8ed1711}\label{classVotingSystem_1_1Election_a489c4e947299c6ec291ae322e8ed1711}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!electionName\_@{electionName\_}}
+\index{electionName\_@{electionName\_}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{electionName\_}{electionName\_}}
+{\footnotesize\ttfamily std\+::string Voting\+System\+::\+Election\+::election\+Name\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Name of this election. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a8a78deb3bf849f0bb4c4b5833e762ce8}\label{classVotingSystem_1_1Election_a8a78deb3bf849f0bb4c4b5833e762ce8}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!electionType\_@{electionType\_}}
+\index{electionType\_@{electionType\_}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{electionType\_}{electionType\_}}
+{\footnotesize\ttfamily std\+::string Voting\+System\+::\+Election\+::election\+Type\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{classVotingSystem_1_1Election}{Election}} type, either IR, OPL or PO for now. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_abb390cee5efff8f72538215fbc444775}\label{classVotingSystem_1_1Election_abb390cee5efff8f72538215fbc444775}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!filenames\_@{filenames\_}}
+\index{filenames\_@{filenames\_}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{filenames\_}{filenames\_}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Voting\+System\+::\+Election\+::filenames\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_ad78be0a43d885de3f47023ca2b128db2}\label{classVotingSystem_1_1Election_ad78be0a43d885de3f47023ca2b128db2}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!inputFile\_@{inputFile\_}}
+\index{inputFile\_@{inputFile\_}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{inputFile\_}{inputFile\_}}
+{\footnotesize\ttfamily std\+::ifstream Voting\+System\+::\+Election\+::input\+File\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Input file ifstream. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a339632f49e40454dffaee55f528658eb}\label{classVotingSystem_1_1Election_a339632f49e40454dffaee55f528658eb}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!numBallots\_@{numBallots\_}}
+\index{numBallots\_@{numBallots\_}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{numBallots\_}{numBallots\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+Election\+::num\+Ballots\+\_\+ = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Total number of Ballots in this election. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a6afedcd3d110d10b8f4fd8567c8a528f}\label{classVotingSystem_1_1Election_a6afedcd3d110d10b8f4fd8567c8a528f}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!numCandidates\_@{numCandidates\_}}
+\index{numCandidates\_@{numCandidates\_}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{numCandidates\_}{numCandidates\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+Election\+::num\+Candidates\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of candidates in this election. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_abf0624b122107e5f7fce4fc5911852d0}\label{classVotingSystem_1_1Election_abf0624b122107e5f7fce4fc5911852d0}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!numFiles\_@{numFiles\_}}
+\index{numFiles\_@{numFiles\_}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{numFiles\_}{numFiles\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+Election\+::num\+Files\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of files read in. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_aef84132f62366c1635d67779a22f8b56}\label{classVotingSystem_1_1Election_aef84132f62366c1635d67779a22f8b56}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!party\_@{party\_}}
+\index{party\_@{party\_}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{party\_}{party\_}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVotingSystem_1_1OPLParty}{OPLParty}} $\ast$$>$ Voting\+System\+::\+Election\+::party\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Vector of all parties in this election. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a028146009637f4dfe38a9cd0db18b125}\label{classVotingSystem_1_1Election_a028146009637f4dfe38a9cd0db18b125}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!recentFileBallots\_@{recentFileBallots\_}}
+\index{recentFileBallots\_@{recentFileBallots\_}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{recentFileBallots\_}{recentFileBallots\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+Election\+::recent\+File\+Ballots\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a2b71d0546b2412da9ab8f3e6739c80bf}\label{classVotingSystem_1_1Election_a2b71d0546b2412da9ab8f3e6739c80bf}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!seed\_@{seed\_}}
+\index{seed\_@{seed\_}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{seed\_}{seed\_}}
+{\footnotesize\ttfamily unsigned int Voting\+System\+::\+Election\+::seed\+\_\+ = time(NULL)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Attribute that used for coin\+Flip. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Election_a453fc58913ea220153d70c368dd21cca}\label{classVotingSystem_1_1Election_a453fc58913ea220153d70c368dd21cca}} 
+\index{VotingSystem::Election@{VotingSystem::Election}!winners\_@{winners\_}}
+\index{winners\_@{winners\_}!VotingSystem::Election@{VotingSystem::Election}}
+\doxysubsubsection{\texorpdfstring{winners\_}{winners\_}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$$>$ Voting\+System\+::\+Election\+::winners\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Vector of candidates that wins this election. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/kevin/\+Desktop/repo-\/\+Team14/\+Project2/src/include/\mbox{\hyperlink{Election_8h}{Election.\+h}}\item 
+/mnt/c/\+Users/kevin/\+Desktop/repo-\/\+Team14/\+Project2/src/\mbox{\hyperlink{Election_8cpp}{Election.\+cpp}}\end{DoxyCompactItemize}

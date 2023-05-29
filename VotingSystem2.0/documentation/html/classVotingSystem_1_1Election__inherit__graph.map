@@ -1,0 +1,4 @@
+<map id="VotingSystem::Election" name="VotingSystem::Election">
+<area shape="rect" id="node2" href="$classVotingSystem_1_1IRElection.html" title="Class that handles Instant Runoff Elections. " alt="" coords="5,80,179,107"/>
+<area shape="rect" id="node3" href="$classVotingSystem_1_1OPLElection.html" title="Class that handles Open Party List Elections. The run() method is the main driver function and will b..." alt="" coords="203,80,389,107"/>
+</map>

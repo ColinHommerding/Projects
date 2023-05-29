@@ -1,0 +1,234 @@
+\hypertarget{classVotingSystem_1_1POElection}{}\doxysection{Voting\+System\+::POElection Class Reference}
+\label{classVotingSystem_1_1POElection}\index{VotingSystem::POElection@{VotingSystem::POElection}}
+
+
+Class that handles Popularity Only Elections.  
+
+
+
+
+{\ttfamily \#include $<$POElection.\+h$>$}
+
+
+
+Inheritance diagram for Voting\+System\+::POElection\+:
+% FIG 0
+
+
+Collaboration diagram for Voting\+System\+::POElection\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVotingSystem_1_1POElection_a9c97c851d28c4a3161c06e65ebb06100}{POElection}} (std\+::string el\+Name, std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{main_8cpp_a0695804b4a1f9cf9f3da28ac4a9c638e}{filenames\+\_\+vec}}, int debug)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVotingSystem_1_1POElection}{POElection}} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVotingSystem_1_1POElection_a42633592d6339ee0d4c5a8412c2f8812}{$\sim$\+POElection}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVotingSystem_1_1POElection}{POElection}} destructor. \end{DoxyCompactList}\item 
+std\+::ifstream $\ast$ \mbox{\hyperlink{classVotingSystem_1_1POElection_a05be0c754f4094794c87e6e26c280093}{get\+Input\+File}} ()
+\begin{DoxyCompactList}\small\item\em input\+File getter \end{DoxyCompactList}\item 
+std\+::ofstream $\ast$ \mbox{\hyperlink{classVotingSystem_1_1POElection_acf6b8adda4448203242bd6ebd724103e}{get\+Audit\+File}} ()
+\begin{DoxyCompactList}\small\item\em audit\+File getter \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1POElection_aaa81992c96b0c27905aeeaefbec90020}{run}} ()
+\begin{DoxyCompactList}\small\item\em Runs \mbox{\hyperlink{classVotingSystem_1_1POElection}{POElection}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVotingSystem_1_1POElection_a2e306b8ae3ca23231d20fbea6192a064}{check\+\_\+header\+\_\+consistency}} ()
+\begin{DoxyCompactList}\small\item\em check consistency header \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1POElection_ac83d493c5abdb99d6ce82c15e4313a34}{read\+Header}} (int fileno)
+\begin{DoxyCompactList}\small\item\em Reads first four lines of input file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1POElection_a1ad8b130c0d8659665c49a7f028ebd24}{verify\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Verify input file information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1POElection_a4b4939f275a82334eb9e093b88e36fcd}{read\+Ballots}} (int start\+ID=0)
+\begin{DoxyCompactList}\small\item\em Parse ballots. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1POElection_aefeab2600e1f3dc15678e1734157b4ee}{generate\+Term\+Output}} ()
+\begin{DoxyCompactList}\small\item\em generate\+Term\+Output is not written yet -\/ but it will output text to the terminal with an overview of the election. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1POElection_ad1bae8c37f068497202d77d0e96b7d51}{generate\+Media\+File}} ()
+\begin{DoxyCompactList}\small\item\em generate\+Media\+File is not written yet -\/ but it will create a media file with an overview of the election. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class that handles Popularity Only Elections. 
+
+The \mbox{\hyperlink{classVotingSystem_1_1POElection_aaa81992c96b0c27905aeeaefbec90020}{run()}} method is the main driver function and will be called from main after the \mbox{\hyperlink{classVotingSystem_1_1IRElection}{IRElection}} object is created. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1POElection_a9c97c851d28c4a3161c06e65ebb06100}\label{classVotingSystem_1_1POElection_a9c97c851d28c4a3161c06e65ebb06100}} 
+\index{VotingSystem::POElection@{VotingSystem::POElection}!POElection@{POElection}}
+\index{POElection@{POElection}!VotingSystem::POElection@{VotingSystem::POElection}}
+\doxysubsubsection{\texorpdfstring{POElection()}{POElection()}}
+{\footnotesize\ttfamily Voting\+System\+::\+POElection\+::\+POElection (\begin{DoxyParamCaption}\item[{std\+::string}]{el\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{filenames\+\_\+vec,  }\item[{int}]{debug }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classVotingSystem_1_1POElection}{POElection}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el\+Name} & the name of the election \\
+\hline
+{\em filenames\+\_\+vec} & a vector of strings containing the names of all the input files \\
+\hline
+{\em debug} & a integer that toggles non-\/deterministic mode\\
+\hline
+\end{DoxyParams}
+Sets the name of the election and the vector containing all PO election input file names. \mbox{\Hypertarget{classVotingSystem_1_1POElection_a42633592d6339ee0d4c5a8412c2f8812}\label{classVotingSystem_1_1POElection_a42633592d6339ee0d4c5a8412c2f8812}} 
+\index{VotingSystem::POElection@{VotingSystem::POElection}!````~POElection@{$\sim$POElection}}
+\index{````~POElection@{$\sim$POElection}!VotingSystem::POElection@{VotingSystem::POElection}}
+\doxysubsubsection{\texorpdfstring{$\sim$POElection()}{~POElection()}}
+{\footnotesize\ttfamily Voting\+System\+::\+POElection\+::$\sim$\+POElection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classVotingSystem_1_1POElection}{POElection}} destructor. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1POElection_a2e306b8ae3ca23231d20fbea6192a064}\label{classVotingSystem_1_1POElection_a2e306b8ae3ca23231d20fbea6192a064}} 
+\index{VotingSystem::POElection@{VotingSystem::POElection}!check\_header\_consistency@{check\_header\_consistency}}
+\index{check\_header\_consistency@{check\_header\_consistency}!VotingSystem::POElection@{VotingSystem::POElection}}
+\doxysubsubsection{\texorpdfstring{check\_header\_consistency()}{check\_header\_consistency()}}
+{\footnotesize\ttfamily bool Voting\+System\+::\+POElection\+::check\+\_\+header\+\_\+consistency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+check consistency header 
+
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+return true if input files has the same header, false otherwise open input files
+
+Implements \mbox{\hyperlink{classVotingSystem_1_1Election_a105ecb4c32caaa881145464441cc0c59}{Voting\+System\+::\+Election}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1POElection_ad1bae8c37f068497202d77d0e96b7d51}\label{classVotingSystem_1_1POElection_ad1bae8c37f068497202d77d0e96b7d51}} 
+\index{VotingSystem::POElection@{VotingSystem::POElection}!generateMediaFile@{generateMediaFile}}
+\index{generateMediaFile@{generateMediaFile}!VotingSystem::POElection@{VotingSystem::POElection}}
+\doxysubsubsection{\texorpdfstring{generateMediaFile()}{generateMediaFile()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+POElection\+::generate\+Media\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+generate\+Media\+File is not written yet -\/ but it will create a media file with an overview of the election. 
+
+
+
+Implements \mbox{\hyperlink{classVotingSystem_1_1Election_aeb742000c233bd079d8a296f26fd9f3a}{Voting\+System\+::\+Election}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1POElection_aefeab2600e1f3dc15678e1734157b4ee}\label{classVotingSystem_1_1POElection_aefeab2600e1f3dc15678e1734157b4ee}} 
+\index{VotingSystem::POElection@{VotingSystem::POElection}!generateTermOutput@{generateTermOutput}}
+\index{generateTermOutput@{generateTermOutput}!VotingSystem::POElection@{VotingSystem::POElection}}
+\doxysubsubsection{\texorpdfstring{generateTermOutput()}{generateTermOutput()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+POElection\+::generate\+Term\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+generate\+Term\+Output is not written yet -\/ but it will output text to the terminal with an overview of the election. 
+
+
+
+Implements \mbox{\hyperlink{classVotingSystem_1_1Election_aa3fbaaffe23e87ccf965517143add9e6}{Voting\+System\+::\+Election}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1POElection_acf6b8adda4448203242bd6ebd724103e}\label{classVotingSystem_1_1POElection_acf6b8adda4448203242bd6ebd724103e}} 
+\index{VotingSystem::POElection@{VotingSystem::POElection}!getAuditFile@{getAuditFile}}
+\index{getAuditFile@{getAuditFile}!VotingSystem::POElection@{VotingSystem::POElection}}
+\doxysubsubsection{\texorpdfstring{getAuditFile()}{getAuditFile()}}
+{\footnotesize\ttfamily std\+::ofstream$\ast$ Voting\+System\+::\+POElection\+::get\+Audit\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+audit\+File getter 
+
+\begin{DoxyReturn}{Returns}
+an ofstream object containing the audit file 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1POElection_a05be0c754f4094794c87e6e26c280093}\label{classVotingSystem_1_1POElection_a05be0c754f4094794c87e6e26c280093}} 
+\index{VotingSystem::POElection@{VotingSystem::POElection}!getInputFile@{getInputFile}}
+\index{getInputFile@{getInputFile}!VotingSystem::POElection@{VotingSystem::POElection}}
+\doxysubsubsection{\texorpdfstring{getInputFile()}{getInputFile()}}
+{\footnotesize\ttfamily std\+::ifstream$\ast$ Voting\+System\+::\+POElection\+::get\+Input\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+input\+File getter 
+
+\begin{DoxyReturn}{Returns}
+an ifstream object containing the input file 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1POElection_a4b4939f275a82334eb9e093b88e36fcd}\label{classVotingSystem_1_1POElection_a4b4939f275a82334eb9e093b88e36fcd}} 
+\index{VotingSystem::POElection@{VotingSystem::POElection}!readBallots@{readBallots}}
+\index{readBallots@{readBallots}!VotingSystem::POElection@{VotingSystem::POElection}}
+\doxysubsubsection{\texorpdfstring{readBallots()}{readBallots()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+POElection\+::read\+Ballots (\begin{DoxyParamCaption}\item[{int}]{start\+ID = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Parse ballots. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+ID} & the value from which to start the ballot ID-\/ing from. Defaults at 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Iterates through the rest of all of the PO election input files and creates a \mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}} object with the proper information for each line. Logs who each ballot voted for in the audit file. \mbox{\Hypertarget{classVotingSystem_1_1POElection_ac83d493c5abdb99d6ce82c15e4313a34}\label{classVotingSystem_1_1POElection_ac83d493c5abdb99d6ce82c15e4313a34}} 
+\index{VotingSystem::POElection@{VotingSystem::POElection}!readHeader@{readHeader}}
+\index{readHeader@{readHeader}!VotingSystem::POElection@{VotingSystem::POElection}}
+\doxysubsubsection{\texorpdfstring{readHeader()}{readHeader()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+POElection\+::read\+Header (\begin{DoxyParamCaption}\item[{int}]{fileno }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reads first four lines of input file. 
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+read\+Header is specific to \mbox{\hyperlink{classVotingSystem_1_1POElection}{POElection}} files. It parses the number of candidates, number of ballots, and candidates from all of the input files, stores that info, calculates any derived information like num\+Ballots\+To\+Win, and logs the \mbox{\hyperlink{classVotingSystem_1_1Election}{Election}} Overview and Candidates sections to the audit file. 
+
+Implements \mbox{\hyperlink{classVotingSystem_1_1Election_a80ccb7a8c3e1b092e1666cea16c2b7c3}{Voting\+System\+::\+Election}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1POElection_aaa81992c96b0c27905aeeaefbec90020}\label{classVotingSystem_1_1POElection_aaa81992c96b0c27905aeeaefbec90020}} 
+\index{VotingSystem::POElection@{VotingSystem::POElection}!run@{run}}
+\index{run@{run}!VotingSystem::POElection@{VotingSystem::POElection}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+POElection\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Runs \mbox{\hyperlink{classVotingSystem_1_1POElection}{POElection}}. 
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Run is the main driver function, and makes all the needed function calls to successfully run and log the election. 
+
+Implements \mbox{\hyperlink{classVotingSystem_1_1Election_a019d95188c8f3d6ea2ea74c388e3e962}{Voting\+System\+::\+Election}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1POElection_a1ad8b130c0d8659665c49a7f028ebd24}\label{classVotingSystem_1_1POElection_a1ad8b130c0d8659665c49a7f028ebd24}} 
+\index{VotingSystem::POElection@{VotingSystem::POElection}!verifyInfo@{verifyInfo}}
+\index{verifyInfo@{verifyInfo}!VotingSystem::POElection@{VotingSystem::POElection}}
+\doxysubsubsection{\texorpdfstring{verifyInfo()}{verifyInfo()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+POElection\+::verify\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Verify input file information. 
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Asks user to verify the candidates and election information by typing Y/N into the terminal. \mbox{\hyperlink{classVotingSystem_1_1Election}{Election}} calculation continues if Y, while audit file is deleted and program terminates if N. 
+
+Implements \mbox{\hyperlink{classVotingSystem_1_1Election_a677cc98656c59a32a53838cd84b2a082}{Voting\+System\+::\+Election}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/kevin/\+Desktop/repo-\/\+Team14/\+Project2/src/include/\mbox{\hyperlink{POElection_8h}{POElection.\+h}}\item 
+/mnt/c/\+Users/kevin/\+Desktop/repo-\/\+Team14/\+Project2/src/\mbox{\hyperlink{POElection_8cpp}{POElection.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,150 @@
+\hypertarget{classVotingSystem_1_1Ballot}{}\doxysection{Voting\+System\+::Ballot Class Reference}
+\label{classVotingSystem_1_1Ballot}\index{VotingSystem::Ballot@{VotingSystem::Ballot}}
+
+
+A basic \mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}} class.  
+
+
+
+
+{\ttfamily \#include $<$Ballot.\+h$>$}
+
+
+
+Inheritance diagram for Voting\+System\+::Ballot\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVotingSystem_1_1Ballot_ab99b6595ce48eeb431a4729f52f22546}{Ballot}} (int id)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVotingSystem_1_1Ballot_a3fd60f1e36e8050f07aa0da6b2e43095}{$\sim$\+Ballot}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}} destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1Ballot_a978c3eebece5f1f15edc5f73def69c36}{add\+Candidate}} (\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Adds a candidate to the ranked\+Candidates\+\_\+ vector. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1Ballot_ae37f6dd85496bc9ff0ebb11cfd8c4a26}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em ID getter method. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$ $>$ \mbox{\hyperlink{classVotingSystem_1_1Ballot_a92b27e10bb6ec0d50bae1467b14997c1}{get\+Ranked\+Candidates}} ()
+\begin{DoxyCompactList}\small\item\em ranked\+Candidates\+\_\+ getter method \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classVotingSystem_1_1Ballot_a5dfed0a20c5b6aff6fa875161d6a06e8}{id\+\_\+}}
+\begin{DoxyCompactList}\small\item\em An ID for the ballot, to be set at time of instantiation. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$ $>$ \mbox{\hyperlink{classVotingSystem_1_1Ballot_ae0707c04563315ac62601afc5e79fd2d}{ranked\+Candidates\+\_\+}}
+\begin{DoxyCompactList}\small\item\em List of candidates, ranked by voter\textquotesingle{}s preference if applicable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A basic \mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}} class. 
+
+Contains an ID integer, as well as a vector of \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} pointers. In IR, the candidates are meant to be ranked by the voter\textquotesingle{}s preference. In OPL, since the rules state each ballot only votes for one candidate, the vector would only contain one entry. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1Ballot_ab99b6595ce48eeb431a4729f52f22546}\label{classVotingSystem_1_1Ballot_ab99b6595ce48eeb431a4729f52f22546}} 
+\index{VotingSystem::Ballot@{VotingSystem::Ballot}!Ballot@{Ballot}}
+\index{Ballot@{Ballot}!VotingSystem::Ballot@{VotingSystem::Ballot}}
+\doxysubsubsection{\texorpdfstring{Ballot()}{Ballot()}}
+{\footnotesize\ttfamily Voting\+System\+::\+Ballot\+::\+Ballot (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & an integer which contains \mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}}\textquotesingle{}s ID. Intended to be unique to ballot \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Sets ballot\textquotesingle{}s id\+\_\+ attribute to id, and creates an empty ranked\+Candidates\+\_\+ vector, to store candidates \mbox{\Hypertarget{classVotingSystem_1_1Ballot_a3fd60f1e36e8050f07aa0da6b2e43095}\label{classVotingSystem_1_1Ballot_a3fd60f1e36e8050f07aa0da6b2e43095}} 
+\index{VotingSystem::Ballot@{VotingSystem::Ballot}!````~Ballot@{$\sim$Ballot}}
+\index{````~Ballot@{$\sim$Ballot}!VotingSystem::Ballot@{VotingSystem::Ballot}}
+\doxysubsubsection{\texorpdfstring{$\sim$Ballot()}{~Ballot()}}
+{\footnotesize\ttfamily Voting\+System\+::\+Ballot\+::$\sim$\+Ballot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}} destructor. 
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Does not delete the candidates in the candidates vector. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1Ballot_a978c3eebece5f1f15edc5f73def69c36}\label{classVotingSystem_1_1Ballot_a978c3eebece5f1f15edc5f73def69c36}} 
+\index{VotingSystem::Ballot@{VotingSystem::Ballot}!addCandidate@{addCandidate}}
+\index{addCandidate@{addCandidate}!VotingSystem::Ballot@{VotingSystem::Ballot}}
+\doxysubsubsection{\texorpdfstring{addCandidate()}{addCandidate()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+Ballot\+::add\+Candidate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVotingSystem_1_1Candidate}{VS\+::\+Candidate}} $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Adds a candidate to the ranked\+Candidates\+\_\+ vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & a \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} reference pointing to the candidate to be added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+The method will NOT add a candidate to ranked\+Candidates\+\_\+ vector if the passed in candidate\textquotesingle{}s id already exists in the vector. \mbox{\Hypertarget{classVotingSystem_1_1Ballot_ae37f6dd85496bc9ff0ebb11cfd8c4a26}\label{classVotingSystem_1_1Ballot_ae37f6dd85496bc9ff0ebb11cfd8c4a26}} 
+\index{VotingSystem::Ballot@{VotingSystem::Ballot}!getId@{getId}}
+\index{getId@{getId}!VotingSystem::Ballot@{VotingSystem::Ballot}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily int Voting\+System\+::\+Ballot\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+ID getter method. 
+
+\begin{DoxyReturn}{Returns}
+the ballot\textquotesingle{}s ID 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Ballot_a92b27e10bb6ec0d50bae1467b14997c1}\label{classVotingSystem_1_1Ballot_a92b27e10bb6ec0d50bae1467b14997c1}} 
+\index{VotingSystem::Ballot@{VotingSystem::Ballot}!getRankedCandidates@{getRankedCandidates}}
+\index{getRankedCandidates@{getRankedCandidates}!VotingSystem::Ballot@{VotingSystem::Ballot}}
+\doxysubsubsection{\texorpdfstring{getRankedCandidates()}{getRankedCandidates()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}}$\ast$$>$ Voting\+System\+::\+Ballot\+::get\+Ranked\+Candidates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+ranked\+Candidates\+\_\+ getter method 
+
+\begin{DoxyReturn}{Returns}
+the ballot\textquotesingle{}s ranked\+Candidates\+\_\+ vector 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1Ballot_a5dfed0a20c5b6aff6fa875161d6a06e8}\label{classVotingSystem_1_1Ballot_a5dfed0a20c5b6aff6fa875161d6a06e8}} 
+\index{VotingSystem::Ballot@{VotingSystem::Ballot}!id\_@{id\_}}
+\index{id\_@{id\_}!VotingSystem::Ballot@{VotingSystem::Ballot}}
+\doxysubsubsection{\texorpdfstring{id\_}{id\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+Ballot\+::id\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+An ID for the ballot, to be set at time of instantiation. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Ballot_ae0707c04563315ac62601afc5e79fd2d}\label{classVotingSystem_1_1Ballot_ae0707c04563315ac62601afc5e79fd2d}} 
+\index{VotingSystem::Ballot@{VotingSystem::Ballot}!rankedCandidates\_@{rankedCandidates\_}}
+\index{rankedCandidates\_@{rankedCandidates\_}!VotingSystem::Ballot@{VotingSystem::Ballot}}
+\doxysubsubsection{\texorpdfstring{rankedCandidates\_}{rankedCandidates\_}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}}$\ast$$>$ Voting\+System\+::\+Ballot\+::ranked\+Candidates\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+List of candidates, ranked by voter\textquotesingle{}s preference if applicable. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/kevin/\+Desktop/repo-\/\+Team14/\+Project2/src/include/\mbox{\hyperlink{Ballot_8h}{Ballot.\+h}}\item 
+/mnt/c/\+Users/kevin/\+Desktop/repo-\/\+Team14/\+Project2/src/\mbox{\hyperlink{Ballot_8cpp}{Ballot.\+cpp}}\end{DoxyCompactItemize}

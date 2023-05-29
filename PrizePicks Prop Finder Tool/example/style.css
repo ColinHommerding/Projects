@@ -1,0 +1,22 @@
+.dataframe {
+ margin-left: auto;
+ margin-right: auto;
+ border: 1px solid #28282B;
+ background-color: #28282B;
+ width: 50%;
+}
+
+tr {
+  background-color: khaki;
+}
+
+th {
+text-align: center;
+}
+
+
+body {
+background-color: #fceed1;
+}
+
+

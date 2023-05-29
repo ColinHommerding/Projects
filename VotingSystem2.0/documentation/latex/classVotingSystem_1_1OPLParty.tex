@@ -1,0 +1,404 @@
+\hypertarget{classVotingSystem_1_1OPLParty}{}\doxysection{Voting\+System\+::OPLParty Class Reference}
+\label{classVotingSystem_1_1OPLParty}\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+
+
+An \mbox{\hyperlink{classVotingSystem_1_1OPLParty}{OPLParty}} class which represents parties in Open Party List voting.  
+
+
+
+
+{\ttfamily \#include $<$OPLParty.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVotingSystem_1_1OPLParty_a3d181f13e5df43f42249c3cf24de773d}{OPLParty}} (std\+::string name, int party\+ID)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVotingSystem_1_1OPLParty}{OPLParty}} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVotingSystem_1_1OPLParty_ac76f9ec9f47124d00a16dec418ffe491}{$\sim$\+OPLParty}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVotingSystem_1_1OPLParty}{OPLParty}} destructor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1OPLParty_a2e31d4a809cb6dcecf7472049ccd9d88}{get\+Seats}} ()
+\begin{DoxyCompactList}\small\item\em num\+Seats\+\_\+ getter \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1OPLParty_a457f3ffba235e00b27fde1f7f336b0f4}{get\+Votes}} ()
+\begin{DoxyCompactList}\small\item\em num\+Votes\+\_\+ getter \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classVotingSystem_1_1OPLParty_a72255d7f0dc6eff0ea9852f4973d240c}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em name\+\_\+ getter \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$ $>$ \mbox{\hyperlink{classVotingSystem_1_1OPLParty_a357da3e5f7861733470fade890284fa7}{get\+Candidates}} ()
+\begin{DoxyCompactList}\small\item\em candidates\+\_\+ getter \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$ $>$ \mbox{\hyperlink{classVotingSystem_1_1OPLParty_adba79af1e97f4a39a36720b44799dda1}{get\+Winner\+Candidates}} ()
+\begin{DoxyCompactList}\small\item\em winner\+Candidates\+\_\+ getter \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1OPLParty_a51d9853f4b86dba649bb36544a6efc1f}{get\+ID}} ()
+\begin{DoxyCompactList}\small\item\em id\+\_\+ getter \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLParty_aa82d118ade273a56ce9489e7302d4edd}{add\+Candidate}} (\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$c)
+\begin{DoxyCompactList}\small\item\em adds \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} pointer to candidates\+\_\+ vector \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1OPLParty_aa9a1674aab69c3982b02d589f8665a20}{get\+Remaining\+Votes}} ()
+\begin{DoxyCompactList}\small\item\em remainder\+Votes\+\_\+ getter \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ \mbox{\hyperlink{classVotingSystem_1_1OPLParty_ac7f6b1fb5f45a9fd865708951a8cbb92}{coin\+Flip}} (std\+::vector$<$ T $\ast$ $>$ tied\+Entities)
+\begin{DoxyCompactList}\small\item\em randomly selects an object from a vector \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLParty_adb38afee61abdcc051affee2728d45ab}{sum\+Candidate\+Votes}} ()
+\begin{DoxyCompactList}\small\item\em Sums together each candidate\textquotesingle{}s votes and stores value in num\+Votes\+\_\+. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLParty_a7041943dfdf44c256322335c3b734c1c}{add\+Seats}} (int n)
+\begin{DoxyCompactList}\small\item\em Adds seats to num\+Seats\+\_\+. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLParty_a4344f6abc401e5e060918805330bb0a2}{update\+Remaining\+Votes}} (int n)
+\begin{DoxyCompactList}\small\item\em Updates remainder\+Votes\+\_\+. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLParty_aae4db34e3eeb2b8a51f41b7400098bdd}{order\+Candidates}} (bool debug)
+\begin{DoxyCompactList}\small\item\em Rearranges candidates from those with most votes to least votes. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$ $>$ \mbox{\hyperlink{classVotingSystem_1_1OPLParty_a8d9315abe10e0444c929c9e418964bea}{assign\+Candidates\+To\+Seats}} ()
+\begin{DoxyCompactList}\small\item\em returns first num\+Seats\+\_\+ candidates in candidates\+\_\+ vector \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classVotingSystem_1_1OPLParty_ad850caa000921071ec70c48c80b208b2}{name\+\_\+}}
+\begin{DoxyCompactList}\small\item\em name of the party \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1OPLParty_a8ad98bf657d8f840df6febcbff0ec078}{num\+Votes\+\_\+}}
+\begin{DoxyCompactList}\small\item\em the total number of votes the party received \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1OPLParty_aa077ae07e8ce665e5b95a5cbefdc6e01}{remainder\+Votes\+\_\+}}
+\begin{DoxyCompactList}\small\item\em the number of remaining votes after first allocation \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1OPLParty_a1d79591010b6dc69c0e185e08ce8b7b8}{num\+Seats\+\_\+}}
+\begin{DoxyCompactList}\small\item\em the number of seats the party has \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$ $>$ \mbox{\hyperlink{classVotingSystem_1_1OPLParty_a332d26d4958f24538618750d516d29d8}{candidates\+\_\+}}
+\begin{DoxyCompactList}\small\item\em all the party\textquotesingle{}s candidates \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$ $>$ \mbox{\hyperlink{classVotingSystem_1_1OPLParty_aa68fc74ff7b91a7bf2018ef0bad58351}{winner\+Candidates\+\_\+}}
+\begin{DoxyCompactList}\small\item\em all candidates who won a seat in the OPL election \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1OPLParty_aeae7ed7bc78c9b05002f42cae61f63e5}{id}}
+\begin{DoxyCompactList}\small\item\em a unique identifier \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \mbox{\hyperlink{classVotingSystem_1_1OPLParty_aa6cfb2baa8d5d24b0beb6b384c9a4cdd}{seed\+\_\+}} = time(NULL)
+\begin{DoxyCompactList}\small\item\em a seed for the randomization used in \mbox{\hyperlink{classVotingSystem_1_1OPLParty_ac7f6b1fb5f45a9fd865708951a8cbb92}{coin\+Flip()}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An \mbox{\hyperlink{classVotingSystem_1_1OPLParty}{OPLParty}} class which represents parties in Open Party List voting. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLParty_a3d181f13e5df43f42249c3cf24de773d}\label{classVotingSystem_1_1OPLParty_a3d181f13e5df43f42249c3cf24de773d}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!OPLParty@{OPLParty}}
+\index{OPLParty@{OPLParty}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{OPLParty()}{OPLParty()}}
+{\footnotesize\ttfamily Voting\+System\+::\+OPLParty\+::\+OPLParty (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{int}]{party\+ID }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classVotingSystem_1_1OPLParty}{OPLParty}} constructor. 
+
+\mbox{\hyperlink{classVotingSystem_1_1OPLParty}{OPLParty}} constructor, requires a string as the party\textquotesingle{}s name Initializes all attributes to 0, name\+\_\+ to passed in name 
+\begin{DoxyParams}{Parameters}
+{\em name} & a string which contains the name of the party \\
+\hline
+{\em party\+ID} & an integer which contains \mbox{\hyperlink{classVotingSystem_1_1OPLParty}{OPLParty}}\textquotesingle{}s ID. Intended to be a unique identifier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Sets id\+\_\+ to party\+ID, name\+\_\+ to party name, and initializes all other attributes to 0 or an empty vector. Also initializes seed\+\_\+, used for random selection in the case of ties \mbox{\Hypertarget{classVotingSystem_1_1OPLParty_ac76f9ec9f47124d00a16dec418ffe491}\label{classVotingSystem_1_1OPLParty_ac76f9ec9f47124d00a16dec418ffe491}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!````~OPLParty@{$\sim$OPLParty}}
+\index{````~OPLParty@{$\sim$OPLParty}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{$\sim$OPLParty()}{~OPLParty()}}
+{\footnotesize\ttfamily Voting\+System\+::\+OPLParty\+::$\sim$\+OPLParty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classVotingSystem_1_1OPLParty}{OPLParty}} destructor. 
+
+Does not delete any of the candidates inside the candidates\+\_\+ or winner\+Candidates\+\_\+ vectors 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLParty_aa82d118ade273a56ce9489e7302d4edd}\label{classVotingSystem_1_1OPLParty_aa82d118ade273a56ce9489e7302d4edd}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!addCandidate@{addCandidate}}
+\index{addCandidate@{addCandidate}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{addCandidate()}{addCandidate()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLParty\+::add\+Candidate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVotingSystem_1_1Candidate}{VS\+::\+Candidate}} $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+adds \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} pointer to candidates\+\_\+ vector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & a pointer to the candidate to be added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Does not add in the given candidate if the pointer is null, or there already exists a candidate in candidates\+\_\+ with the same ID as the given candidate. \mbox{\Hypertarget{classVotingSystem_1_1OPLParty_a7041943dfdf44c256322335c3b734c1c}\label{classVotingSystem_1_1OPLParty_a7041943dfdf44c256322335c3b734c1c}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!addSeats@{addSeats}}
+\index{addSeats@{addSeats}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{addSeats()}{addSeats()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLParty\+::add\+Seats (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Adds seats to num\+Seats\+\_\+. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & an int of the number of seats to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+If n is 0, adds zero seats. If n is negative, subtracts $\vert$n$\vert$ seats from num\+Seats\+\_\+ \mbox{\Hypertarget{classVotingSystem_1_1OPLParty_a8d9315abe10e0444c929c9e418964bea}\label{classVotingSystem_1_1OPLParty_a8d9315abe10e0444c929c9e418964bea}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!assignCandidatesToSeats@{assignCandidatesToSeats}}
+\index{assignCandidatesToSeats@{assignCandidatesToSeats}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{assignCandidatesToSeats()}{assignCandidatesToSeats()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1Candidate}{VS\+::\+Candidate}} $\ast$ $>$ Voting\+System\+::\+OPLParty\+::assign\+Candidates\+To\+Seats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns first num\+Seats\+\_\+ candidates in candidates\+\_\+ vector 
+
+\begin{DoxyReturn}{Returns}
+a vector of the qualifying candidates
+\end{DoxyReturn}
+Returns as a Candidate$\ast$ vector the first num\+Seats\+\_\+ candidates from the candidates\+\_\+ vector, if possible. If num\+Seats\+\_\+ is greater than or equal to the number of candidates, returns all candidates. For proper usage in OPL, candidates should be already ordered by \mbox{\hyperlink{classVotingSystem_1_1OPLParty_aae4db34e3eeb2b8a51f41b7400098bdd}{order\+Candidates()}}. \mbox{\Hypertarget{classVotingSystem_1_1OPLParty_ac7f6b1fb5f45a9fd865708951a8cbb92}\label{classVotingSystem_1_1OPLParty_ac7f6b1fb5f45a9fd865708951a8cbb92}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!coinFlip@{coinFlip}}
+\index{coinFlip@{coinFlip}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{coinFlip()}{coinFlip()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T$\ast$ Voting\+System\+::\+OPLParty\+::coin\+Flip (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $\ast$ $>$}]{tied\+Entities }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+randomly selects an object from a vector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tied\+Entities} & a vector of pointers to an object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+one of the elements in tied\+Entities, nullptr if tied\+Entities is empty vector
+\end{DoxyReturn}
+Generates a random index and returns the element at that index. Returns nullptr if the inputted vector has a size of 0. Does not work with vectors of non-\/pointer types. \mbox{\Hypertarget{classVotingSystem_1_1OPLParty_a357da3e5f7861733470fade890284fa7}\label{classVotingSystem_1_1OPLParty_a357da3e5f7861733470fade890284fa7}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!getCandidates@{getCandidates}}
+\index{getCandidates@{getCandidates}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{getCandidates()}{getCandidates()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}}$\ast$$>$ Voting\+System\+::\+OPLParty\+::get\+Candidates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+candidates\+\_\+ getter 
+
+\begin{DoxyReturn}{Returns}
+a vector of all \mbox{\hyperlink{classVotingSystem_1_1OPLParty}{OPLParty}}\textquotesingle{}s candidates 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLParty_a51d9853f4b86dba649bb36544a6efc1f}\label{classVotingSystem_1_1OPLParty_a51d9853f4b86dba649bb36544a6efc1f}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!getID@{getID}}
+\index{getID@{getID}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{getID()}{getID()}}
+{\footnotesize\ttfamily int Voting\+System\+::\+OPLParty\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+id\+\_\+ getter 
+
+\begin{DoxyReturn}{Returns}
+the party\textquotesingle{}s ID 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLParty_a72255d7f0dc6eff0ea9852f4973d240c}\label{classVotingSystem_1_1OPLParty_a72255d7f0dc6eff0ea9852f4973d240c}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!getName@{getName}}
+\index{getName@{getName}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Voting\+System\+::\+OPLParty\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+name\+\_\+ getter 
+
+\begin{DoxyReturn}{Returns}
+the party\textquotesingle{}s name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLParty_aa9a1674aab69c3982b02d589f8665a20}\label{classVotingSystem_1_1OPLParty_aa9a1674aab69c3982b02d589f8665a20}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!getRemainingVotes@{getRemainingVotes}}
+\index{getRemainingVotes@{getRemainingVotes}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{getRemainingVotes()}{getRemainingVotes()}}
+{\footnotesize\ttfamily int Voting\+System\+::\+OPLParty\+::get\+Remaining\+Votes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+remainder\+Votes\+\_\+ getter 
+
+\begin{DoxyReturn}{Returns}
+the party\textquotesingle{}s number of remaining votes after the first allocation of seats. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLParty_a2e31d4a809cb6dcecf7472049ccd9d88}\label{classVotingSystem_1_1OPLParty_a2e31d4a809cb6dcecf7472049ccd9d88}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!getSeats@{getSeats}}
+\index{getSeats@{getSeats}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{getSeats()}{getSeats()}}
+{\footnotesize\ttfamily int Voting\+System\+::\+OPLParty\+::get\+Seats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+num\+Seats\+\_\+ getter 
+
+\begin{DoxyReturn}{Returns}
+the party\textquotesingle{}s currently assigned number of seats 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLParty_a457f3ffba235e00b27fde1f7f336b0f4}\label{classVotingSystem_1_1OPLParty_a457f3ffba235e00b27fde1f7f336b0f4}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!getVotes@{getVotes}}
+\index{getVotes@{getVotes}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{getVotes()}{getVotes()}}
+{\footnotesize\ttfamily int Voting\+System\+::\+OPLParty\+::get\+Votes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+num\+Votes\+\_\+ getter 
+
+\begin{DoxyReturn}{Returns}
+the number of votes the Party has 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLParty_adba79af1e97f4a39a36720b44799dda1}\label{classVotingSystem_1_1OPLParty_adba79af1e97f4a39a36720b44799dda1}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!getWinnerCandidates@{getWinnerCandidates}}
+\index{getWinnerCandidates@{getWinnerCandidates}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{getWinnerCandidates()}{getWinnerCandidates()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}}$\ast$$>$ Voting\+System\+::\+OPLParty\+::get\+Winner\+Candidates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+winner\+Candidates\+\_\+ getter 
+
+\begin{DoxyReturn}{Returns}
+a vector of all the party\textquotesingle{}s winning candidates 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLParty_aae4db34e3eeb2b8a51f41b7400098bdd}\label{classVotingSystem_1_1OPLParty_aae4db34e3eeb2b8a51f41b7400098bdd}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!orderCandidates@{orderCandidates}}
+\index{orderCandidates@{orderCandidates}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{orderCandidates()}{orderCandidates()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLParty\+::order\+Candidates (\begin{DoxyParamCaption}\item[{bool}]{debug }\end{DoxyParamCaption})}
+
+
+
+Rearranges candidates from those with most votes to least votes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em debug} & an int which toggles randomization of tied candidates \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Orders candidates in candidates\+\_\+ vector in decreasing order by each candidate\textquotesingle{}s num\+Votes\+\_\+ attribute. Breaks ties randomly if debug is false. If debug is true, then breaks ties by ordering all tied candidates by order of appearance in the input file, which is equivalent to ordering by ascending ID values. \mbox{\Hypertarget{classVotingSystem_1_1OPLParty_adb38afee61abdcc051affee2728d45ab}\label{classVotingSystem_1_1OPLParty_adb38afee61abdcc051affee2728d45ab}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!sumCandidateVotes@{sumCandidateVotes}}
+\index{sumCandidateVotes@{sumCandidateVotes}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{sumCandidateVotes()}{sumCandidateVotes()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLParty\+::sum\+Candidate\+Votes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sums together each candidate\textquotesingle{}s votes and stores value in num\+Votes\+\_\+. 
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+If no candidates exist in candidate\+\_\+ vector, sets num\+Votes\+\_\+ to -\/1 \mbox{\Hypertarget{classVotingSystem_1_1OPLParty_a4344f6abc401e5e060918805330bb0a2}\label{classVotingSystem_1_1OPLParty_a4344f6abc401e5e060918805330bb0a2}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!updateRemainingVotes@{updateRemainingVotes}}
+\index{updateRemainingVotes@{updateRemainingVotes}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{updateRemainingVotes()}{updateRemainingVotes()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLParty\+::update\+Remaining\+Votes (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Updates remainder\+Votes\+\_\+. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & an int of the number of remaining votes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Function updates the remainder\+Votes\+\_\+ attribute to the value passed in. If n is zero or negative, resets remainder\+Votes\+\_\+ to 0, so remainder\+Votes\+\_\+ is never negative 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLParty_a332d26d4958f24538618750d516d29d8}\label{classVotingSystem_1_1OPLParty_a332d26d4958f24538618750d516d29d8}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!candidates\_@{candidates\_}}
+\index{candidates\_@{candidates\_}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{candidates\_}{candidates\_}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$$>$ Voting\+System\+::\+OPLParty\+::candidates\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+all the party\textquotesingle{}s candidates 
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLParty_aeae7ed7bc78c9b05002f42cae61f63e5}\label{classVotingSystem_1_1OPLParty_aeae7ed7bc78c9b05002f42cae61f63e5}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!id@{id}}
+\index{id@{id}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int Voting\+System\+::\+OPLParty\+::id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+a unique identifier 
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLParty_ad850caa000921071ec70c48c80b208b2}\label{classVotingSystem_1_1OPLParty_ad850caa000921071ec70c48c80b208b2}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!name\_@{name\_}}
+\index{name\_@{name\_}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{name\_}{name\_}}
+{\footnotesize\ttfamily std\+::string Voting\+System\+::\+OPLParty\+::name\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+name of the party 
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLParty_a1d79591010b6dc69c0e185e08ce8b7b8}\label{classVotingSystem_1_1OPLParty_a1d79591010b6dc69c0e185e08ce8b7b8}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!numSeats\_@{numSeats\_}}
+\index{numSeats\_@{numSeats\_}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{numSeats\_}{numSeats\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+OPLParty\+::num\+Seats\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the number of seats the party has 
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLParty_a8ad98bf657d8f840df6febcbff0ec078}\label{classVotingSystem_1_1OPLParty_a8ad98bf657d8f840df6febcbff0ec078}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!numVotes\_@{numVotes\_}}
+\index{numVotes\_@{numVotes\_}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{numVotes\_}{numVotes\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+OPLParty\+::num\+Votes\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the total number of votes the party received 
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLParty_aa077ae07e8ce665e5b95a5cbefdc6e01}\label{classVotingSystem_1_1OPLParty_aa077ae07e8ce665e5b95a5cbefdc6e01}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!remainderVotes\_@{remainderVotes\_}}
+\index{remainderVotes\_@{remainderVotes\_}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{remainderVotes\_}{remainderVotes\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+OPLParty\+::remainder\+Votes\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the number of remaining votes after first allocation 
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLParty_aa6cfb2baa8d5d24b0beb6b384c9a4cdd}\label{classVotingSystem_1_1OPLParty_aa6cfb2baa8d5d24b0beb6b384c9a4cdd}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!seed\_@{seed\_}}
+\index{seed\_@{seed\_}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{seed\_}{seed\_}}
+{\footnotesize\ttfamily unsigned int Voting\+System\+::\+OPLParty\+::seed\+\_\+ = time(NULL)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+a seed for the randomization used in \mbox{\hyperlink{classVotingSystem_1_1OPLParty_ac7f6b1fb5f45a9fd865708951a8cbb92}{coin\+Flip()}} 
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLParty_aa68fc74ff7b91a7bf2018ef0bad58351}\label{classVotingSystem_1_1OPLParty_aa68fc74ff7b91a7bf2018ef0bad58351}} 
+\index{VotingSystem::OPLParty@{VotingSystem::OPLParty}!winnerCandidates\_@{winnerCandidates\_}}
+\index{winnerCandidates\_@{winnerCandidates\_}!VotingSystem::OPLParty@{VotingSystem::OPLParty}}
+\doxysubsubsection{\texorpdfstring{winnerCandidates\_}{winnerCandidates\_}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$$>$ Voting\+System\+::\+OPLParty\+::winner\+Candidates\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+all candidates who won a seat in the OPL election 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/kevin/\+Desktop/repo-\/\+Team14/\+Project2/src/include/\mbox{\hyperlink{OPLParty_8h}{OPLParty.\+h}}\item 
+/mnt/c/\+Users/kevin/\+Desktop/repo-\/\+Team14/\+Project2/src/\mbox{\hyperlink{OPLParty_8cpp}{OPLParty.\+cpp}}\end{DoxyCompactItemize}

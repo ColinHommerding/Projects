@@ -1,0 +1,460 @@
+\hypertarget{classVotingSystem_1_1OPLElection}{}\doxysection{Voting\+System\+::OPLElection Class Reference}
+\label{classVotingSystem_1_1OPLElection}\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+
+
+Class that handles Open Party List Elections. The \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a6abd6eeae25561344138c6eda56d4436}{run()}} method is the main driver function and will be called from main after the \mbox{\hyperlink{classVotingSystem_1_1IRElection}{IRElection}} object is created.  
+
+
+
+
+{\ttfamily \#include $<$OPLElection.\+h$>$}
+
+
+
+Inheritance diagram for Voting\+System\+::OPLElection\+:
+% FIG 0
+
+
+Collaboration diagram for Voting\+System\+::OPLElection\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVotingSystem_1_1OPLElection_ac112335468766120caa959d07ae1ff86}{OPLElection}} (std\+::string \mbox{\hyperlink{main_8cpp_aa1bec5eb827e7f86243d34cf5a00d2eb}{election\+Name}}, std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{main_8cpp_a0695804b4a1f9cf9f3da28ac4a9c638e}{filenames\+\_\+vec}}, int debug)
+\begin{DoxyCompactList}\small\item\em Constructor. Sets the name of the election and passes in the vector of filenames containing the name of each OPL election input file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVotingSystem_1_1OPLElection_a8e23ff4a3edcf251f6f0d3d999191bfa}{$\sim$\+OPLElection}} ()
+\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a6abd6eeae25561344138c6eda56d4436}{run}} ()
+\begin{DoxyCompactList}\small\item\em Run is the main driver function, and makes all the function calls inside this class itself. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVotingSystem_1_1OPLElection_ad1ff7a0519a58d6986cb4a2525f49c88}{check\+\_\+header\+\_\+consistency}} ()
+\begin{DoxyCompactList}\small\item\em check consistency header \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a530a6a694d765a9c2bb391a125c8a18c}{read\+Header}} (int fileno)
+\begin{DoxyCompactList}\small\item\em read\+Header is specific to \mbox{\hyperlink{classVotingSystem_1_1OPLElection}{OPLElection}} files. It reads the header of every OPL election input file in the election and sets the number of candidates, number of parties, candidates\+List\+\_\+ vector, party\+\_\+vector, number of seats, and number of votes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a462fdfc7dc0665f93d2060428eb77326}{verify\+Info}} ()
+\begin{DoxyCompactList}\small\item\em verify\+Info asks the user to verify information. It exits the program if the user says the information is not correct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLElection_af31c0c33d149ad9c805784061b262a72}{read\+Ballots}} (int start\+ID=0)
+\begin{DoxyCompactList}\small\item\em read\+Ballots reads through the rest of all OPL election input files besides the header and increments each candidate\textquotesingle{}s number of votes for each vote they recieve. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLElection_ab3c6a9100bbf727cc817ca8197c272db}{write\+Ballots\+To\+Audit}} ()
+\begin{DoxyCompactList}\small\item\em writes the {\bfseries{BALLOTS}} header, along with number of ballots cast, each ballot\textquotesingle{}s ID, and the contents of each ballot \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLElection_ae3217e06dc545945799cf7f190c71bb2}{sum\+Party\+Votes}} ()
+\begin{DoxyCompactList}\small\item\em sum\+Party\+Votes adds up all the votes of each candidate in each individual party \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLElection_ae4aa65f0dca0add2113ac4c15d1ba625}{rank\+Candidates\+In\+Parties}} ()
+\begin{DoxyCompactList}\small\item\em rank\+Candidates\+In\+Parties has each party in the election rank its candidates in order of amount of votes they recieved. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLElection_abf82384862fae5626948c3605da9f453}{allocate\+First\+Seats}} ()
+\begin{DoxyCompactList}\small\item\em allocate\+First\+Seats uses the quota to give each party its initial amount of seats and calculates each party\textquotesingle{}s vote remainder. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLElection_aede82a2c8e51c07eca2a0082769a6a0e}{order\+Parties\+By\+Remainder}} ()
+\begin{DoxyCompactList}\small\item\em order\+Parties\+By\+Remainder orders the parties in the OPL election by the vote remainder they had in the party\+\_\+ vector from most to least. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a4de781b15442e8a089d8d1dc92916a4a}{allocate\+Remaining\+Seats}} ()
+\begin{DoxyCompactList}\small\item\em allocate\+Remaining\+Seats goes round robin assigning seats to parties in order of the remaining votes until their are no more available seats left. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a35d4a206efa0bc3678fae2d2b79c12f8}{assign\+Candidates}} ()
+\begin{DoxyCompactList}\small\item\em assign\+Candidates hands out each party\textquotesingle{}s won seats to the candidates in the party in order of the most votes until the party has no more won seats left. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a3a945bd39fd04929c19fd76a26301ee7}{get\+Total\+Seats}} ()
+\begin{DoxyCompactList}\small\item\em get\+Total\+Seats returns the total seats for this OPL election. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a5e9050c52b53e8fd4d88a7a5713a7301}{generate\+Term\+Output}} ()
+\begin{DoxyCompactList}\small\item\em generate\+Term\+Output outputs text to the terminal with an overview of the OPL election. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a10da8a5691fdafa5ea7e66ba12dbb21d}{generate\+Media\+File}} ()
+\begin{DoxyCompactList}\small\item\em generate\+Media\+File creates a media file with an overview of the OPL election. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a7778e53ee03d7e20bfdbd4fa62f088e5}{add\+Party}} (\mbox{\hyperlink{classVotingSystem_1_1OPLParty}{Voting\+System\+::\+OPLParty}} $\ast$party)
+\begin{DoxyCompactList}\small\item\em add\+Party adds a party to the party\+\_\+ vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a53c1b36a53eb8ce4fe3705769ce8489c}{add\+Party\+Alphabetical}} (\mbox{\hyperlink{classVotingSystem_1_1OPLParty}{Voting\+System\+::\+OPLParty}} $\ast$party)
+\begin{DoxyCompactList}\small\item\em add\+Party\+Alphabetical adds a party to the alphabet\+Part\+List\+\_\+ vector of an OPL election. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classVotingSystem_1_1OPLElection_ac8dc13de1b854638c2b9f435a6af060f}{get\+Election\+Name}} ()
+\begin{DoxyCompactList}\small\item\em get\+Election\+Name returns the name of the OPL election. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a4820d109e362e2a4221a496d031df2b4}{set\+Seats}} (int seats)
+\begin{DoxyCompactList}\small\item\em set\+Seats can be used to set the number of available seats for an OPL election. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a2fc7ad0fa0f387d9b5948b8ac89085ea}{set\+Num\+Ballots}} (int ballots)
+\begin{DoxyCompactList}\small\item\em set\+Num\+Ballots can be used to set the number of ballots cast. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1OPLParty}{OPLParty}} $\ast$ $>$ \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a9c4b170a80dd165058caa08a6bdaff12}{get\+Parties}} ()
+\begin{DoxyCompactList}\small\item\em get\+Parties returns the party\+\_\+ vector of an OPL election. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$ $>$ \mbox{\hyperlink{classVotingSystem_1_1OPLElection_abd864edccd199edfe605be7fb88f898d}{get\+Winners}} ()
+\begin{DoxyCompactList}\small\item\em get\+Winners returns the winners\+\_\+ vector of an OPL election. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classVotingSystem_1_1OPLElection_ad7d0deda665e2aff29522c59983f9dcc}{total\+Seats\+\_\+}}
+\begin{DoxyCompactList}\small\item\em total\+Seats\+\_\+ is the number of seats up for grabs in an OPL election. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a0a3d4d9937675172bbe1dbb7cac291b4}{num\+Parties\+\_\+}}
+\begin{DoxyCompactList}\small\item\em num\+Parties\+\_\+ is the number of parties participating in the OPL election. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a7807359ae9a054a80f0b00373f723853}{num\+Seats\+\_\+}}
+\begin{DoxyCompactList}\small\item\em num\+Seats\+\_\+ is the amount of seats that need to be allocated for an OPL election currently. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a413d8e7c278111eaf4aa96c2cab20d39}{num\+Allocated\+Seats\+\_\+}}
+\begin{DoxyCompactList}\small\item\em num\+Allocated\+Seats\+\_\+ is the number of seats that have already been allocated in an OPL election. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a08351de5d0a2980a5343143b38356d27}{quota\+\_\+}}
+\begin{DoxyCompactList}\small\item\em quota\+\_\+ is the calculated value that determines how many votes a party needs to earn one seat during the first allocation. It is the ceiling of num\+Ballots divided by num\+Seats. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class that handles Open Party List Elections. The \mbox{\hyperlink{classVotingSystem_1_1OPLElection_a6abd6eeae25561344138c6eda56d4436}{run()}} method is the main driver function and will be called from main after the \mbox{\hyperlink{classVotingSystem_1_1IRElection}{IRElection}} object is created. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_ac112335468766120caa959d07ae1ff86}\label{classVotingSystem_1_1OPLElection_ac112335468766120caa959d07ae1ff86}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!OPLElection@{OPLElection}}
+\index{OPLElection@{OPLElection}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{OPLElection()}{OPLElection()}}
+{\footnotesize\ttfamily Voting\+System\+::\+OPLElection\+::\+OPLElection (\begin{DoxyParamCaption}\item[{std\+::string}]{election\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{filenames\+\_\+vec,  }\item[{int}]{debug }\end{DoxyParamCaption})}
+
+
+
+Constructor. Sets the name of the election and passes in the vector of filenames containing the name of each OPL election input file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em election\+Name} & A string that is passed in to give the \mbox{\hyperlink{classVotingSystem_1_1OPLElection}{OPLElection}} its name/ \\
+\hline
+{\em filenames\+\_\+vec} & a vector of strings containing the names of all the input files \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_a8e23ff4a3edcf251f6f0d3d999191bfa}\label{classVotingSystem_1_1OPLElection_a8e23ff4a3edcf251f6f0d3d999191bfa}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!````~OPLElection@{$\sim$OPLElection}}
+\index{````~OPLElection@{$\sim$OPLElection}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{$\sim$OPLElection()}{~OPLElection()}}
+{\footnotesize\ttfamily Voting\+System\+::\+OPLElection\+::$\sim$\+OPLElection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_a7778e53ee03d7e20bfdbd4fa62f088e5}\label{classVotingSystem_1_1OPLElection_a7778e53ee03d7e20bfdbd4fa62f088e5}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!addParty@{addParty}}
+\index{addParty@{addParty}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{addParty()}{addParty()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLElection\+::add\+Party (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVotingSystem_1_1OPLParty}{Voting\+System\+::\+OPLParty}} $\ast$}]{party }\end{DoxyParamCaption})}
+
+
+
+add\+Party adds a party to the party\+\_\+ vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em party} & is an \mbox{\hyperlink{classVotingSystem_1_1OPLParty}{OPLParty}} object that gets added to the OPL election\textquotesingle{}s party\+\_\+ vector to store it. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_a53c1b36a53eb8ce4fe3705769ce8489c}\label{classVotingSystem_1_1OPLElection_a53c1b36a53eb8ce4fe3705769ce8489c}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!addPartyAlphabetical@{addPartyAlphabetical}}
+\index{addPartyAlphabetical@{addPartyAlphabetical}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{addPartyAlphabetical()}{addPartyAlphabetical()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLElection\+::add\+Party\+Alphabetical (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVotingSystem_1_1OPLParty}{Voting\+System\+::\+OPLParty}} $\ast$}]{party }\end{DoxyParamCaption})}
+
+
+
+add\+Party\+Alphabetical adds a party to the alphabet\+Part\+List\+\_\+ vector of an OPL election. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_abf82384862fae5626948c3605da9f453}\label{classVotingSystem_1_1OPLElection_abf82384862fae5626948c3605da9f453}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!allocateFirstSeats@{allocateFirstSeats}}
+\index{allocateFirstSeats@{allocateFirstSeats}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{allocateFirstSeats()}{allocateFirstSeats()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLElection\+::allocate\+First\+Seats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+allocate\+First\+Seats uses the quota to give each party its initial amount of seats and calculates each party\textquotesingle{}s vote remainder. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_a4de781b15442e8a089d8d1dc92916a4a}\label{classVotingSystem_1_1OPLElection_a4de781b15442e8a089d8d1dc92916a4a}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!allocateRemainingSeats@{allocateRemainingSeats}}
+\index{allocateRemainingSeats@{allocateRemainingSeats}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{allocateRemainingSeats()}{allocateRemainingSeats()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLElection\+::allocate\+Remaining\+Seats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+allocate\+Remaining\+Seats goes round robin assigning seats to parties in order of the remaining votes until their are no more available seats left. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_a35d4a206efa0bc3678fae2d2b79c12f8}\label{classVotingSystem_1_1OPLElection_a35d4a206efa0bc3678fae2d2b79c12f8}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!assignCandidates@{assignCandidates}}
+\index{assignCandidates@{assignCandidates}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{assignCandidates()}{assignCandidates()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLElection\+::assign\+Candidates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+assign\+Candidates hands out each party\textquotesingle{}s won seats to the candidates in the party in order of the most votes until the party has no more won seats left. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_ad1ff7a0519a58d6986cb4a2525f49c88}\label{classVotingSystem_1_1OPLElection_ad1ff7a0519a58d6986cb4a2525f49c88}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!check\_header\_consistency@{check\_header\_consistency}}
+\index{check\_header\_consistency@{check\_header\_consistency}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{check\_header\_consistency()}{check\_header\_consistency()}}
+{\footnotesize\ttfamily bool Voting\+System\+::\+OPLElection\+::check\+\_\+header\+\_\+consistency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+check consistency header 
+
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+return true if input files has the same header, false otherwise open input files
+
+Implements \mbox{\hyperlink{classVotingSystem_1_1Election_a105ecb4c32caaa881145464441cc0c59}{Voting\+System\+::\+Election}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_a10da8a5691fdafa5ea7e66ba12dbb21d}\label{classVotingSystem_1_1OPLElection_a10da8a5691fdafa5ea7e66ba12dbb21d}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!generateMediaFile@{generateMediaFile}}
+\index{generateMediaFile@{generateMediaFile}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{generateMediaFile()}{generateMediaFile()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLElection\+::generate\+Media\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+generate\+Media\+File creates a media file with an overview of the OPL election. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classVotingSystem_1_1Election_aeb742000c233bd079d8a296f26fd9f3a}{Voting\+System\+::\+Election}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_a5e9050c52b53e8fd4d88a7a5713a7301}\label{classVotingSystem_1_1OPLElection_a5e9050c52b53e8fd4d88a7a5713a7301}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!generateTermOutput@{generateTermOutput}}
+\index{generateTermOutput@{generateTermOutput}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{generateTermOutput()}{generateTermOutput()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLElection\+::generate\+Term\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+generate\+Term\+Output outputs text to the terminal with an overview of the OPL election. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classVotingSystem_1_1Election_aa3fbaaffe23e87ccf965517143add9e6}{Voting\+System\+::\+Election}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_ac8dc13de1b854638c2b9f435a6af060f}\label{classVotingSystem_1_1OPLElection_ac8dc13de1b854638c2b9f435a6af060f}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!getElectionName@{getElectionName}}
+\index{getElectionName@{getElectionName}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{getElectionName()}{getElectionName()}}
+{\footnotesize\ttfamily std\+::string Voting\+System\+::\+OPLElection\+::get\+Election\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Election\+Name returns the name of the OPL election. 
+
+\begin{DoxyReturn}{Returns}
+A string which is the OPL election\textquotesingle{}s name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_a9c4b170a80dd165058caa08a6bdaff12}\label{classVotingSystem_1_1OPLElection_a9c4b170a80dd165058caa08a6bdaff12}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!getParties@{getParties}}
+\index{getParties@{getParties}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{getParties()}{getParties()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVotingSystem_1_1OPLParty}{OPLParty}} $\ast$$>$ Voting\+System\+::\+OPLElection\+::get\+Parties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Parties returns the party\+\_\+ vector of an OPL election. 
+
+\begin{DoxyReturn}{Returns}
+Returns a vector of \mbox{\hyperlink{classVotingSystem_1_1OPLParty}{OPLParty}} objects . 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_a3a945bd39fd04929c19fd76a26301ee7}\label{classVotingSystem_1_1OPLElection_a3a945bd39fd04929c19fd76a26301ee7}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!getTotalSeats@{getTotalSeats}}
+\index{getTotalSeats@{getTotalSeats}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{getTotalSeats()}{getTotalSeats()}}
+{\footnotesize\ttfamily int Voting\+System\+::\+OPLElection\+::get\+Total\+Seats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Total\+Seats returns the total seats for this OPL election. 
+
+\begin{DoxyReturn}{Returns}
+An integer which is the total amount of seats for an OPL election. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_abd864edccd199edfe605be7fb88f898d}\label{classVotingSystem_1_1OPLElection_abd864edccd199edfe605be7fb88f898d}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!getWinners@{getWinners}}
+\index{getWinners@{getWinners}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{getWinners()}{getWinners()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$$>$ Voting\+System\+::\+OPLElection\+::get\+Winners (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Winners returns the winners\+\_\+ vector of an OPL election. 
+
+\begin{DoxyReturn}{Returns}
+Returns a vector of \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} objects. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_aede82a2c8e51c07eca2a0082769a6a0e}\label{classVotingSystem_1_1OPLElection_aede82a2c8e51c07eca2a0082769a6a0e}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!orderPartiesByRemainder@{orderPartiesByRemainder}}
+\index{orderPartiesByRemainder@{orderPartiesByRemainder}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{orderPartiesByRemainder()}{orderPartiesByRemainder()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLElection\+::order\+Parties\+By\+Remainder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+order\+Parties\+By\+Remainder orders the parties in the OPL election by the vote remainder they had in the party\+\_\+ vector from most to least. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_ae4aa65f0dca0add2113ac4c15d1ba625}\label{classVotingSystem_1_1OPLElection_ae4aa65f0dca0add2113ac4c15d1ba625}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!rankCandidatesInParties@{rankCandidatesInParties}}
+\index{rankCandidatesInParties@{rankCandidatesInParties}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{rankCandidatesInParties()}{rankCandidatesInParties()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLElection\+::rank\+Candidates\+In\+Parties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+rank\+Candidates\+In\+Parties has each party in the election rank its candidates in order of amount of votes they recieved. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_af31c0c33d149ad9c805784061b262a72}\label{classVotingSystem_1_1OPLElection_af31c0c33d149ad9c805784061b262a72}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!readBallots@{readBallots}}
+\index{readBallots@{readBallots}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{readBallots()}{readBallots()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLElection\+::read\+Ballots (\begin{DoxyParamCaption}\item[{int}]{start\+ID = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+read\+Ballots reads through the rest of all OPL election input files besides the header and increments each candidate\textquotesingle{}s number of votes for each vote they recieve. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+ID} & an integer from which to start the ID-\/ing of ballots from. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_a530a6a694d765a9c2bb391a125c8a18c}\label{classVotingSystem_1_1OPLElection_a530a6a694d765a9c2bb391a125c8a18c}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!readHeader@{readHeader}}
+\index{readHeader@{readHeader}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{readHeader()}{readHeader()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLElection\+::read\+Header (\begin{DoxyParamCaption}\item[{int}]{fileno }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+read\+Header is specific to \mbox{\hyperlink{classVotingSystem_1_1OPLElection}{OPLElection}} files. It reads the header of every OPL election input file in the election and sets the number of candidates, number of parties, candidates\+List\+\_\+ vector, party\+\_\+vector, number of seats, and number of votes. 
+
+
+
+Implements \mbox{\hyperlink{classVotingSystem_1_1Election_a80ccb7a8c3e1b092e1666cea16c2b7c3}{Voting\+System\+::\+Election}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_a6abd6eeae25561344138c6eda56d4436}\label{classVotingSystem_1_1OPLElection_a6abd6eeae25561344138c6eda56d4436}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!run@{run}}
+\index{run@{run}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLElection\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Run is the main driver function, and makes all the function calls inside this class itself. 
+
+
+
+Implements \mbox{\hyperlink{classVotingSystem_1_1Election_a019d95188c8f3d6ea2ea74c388e3e962}{Voting\+System\+::\+Election}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_a2fc7ad0fa0f387d9b5948b8ac89085ea}\label{classVotingSystem_1_1OPLElection_a2fc7ad0fa0f387d9b5948b8ac89085ea}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!setNumBallots@{setNumBallots}}
+\index{setNumBallots@{setNumBallots}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{setNumBallots()}{setNumBallots()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLElection\+::set\+Num\+Ballots (\begin{DoxyParamCaption}\item[{int}]{ballots }\end{DoxyParamCaption})}
+
+
+
+set\+Num\+Ballots can be used to set the number of ballots cast. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ballots} & An integer that is set as the num\+Ballots for an OPL election. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_a4820d109e362e2a4221a496d031df2b4}\label{classVotingSystem_1_1OPLElection_a4820d109e362e2a4221a496d031df2b4}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!setSeats@{setSeats}}
+\index{setSeats@{setSeats}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{setSeats()}{setSeats()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLElection\+::set\+Seats (\begin{DoxyParamCaption}\item[{int}]{seats }\end{DoxyParamCaption})}
+
+
+
+set\+Seats can be used to set the number of available seats for an OPL election. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seats} & An integer that is set as the num\+Seats for an OPL election. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_ae3217e06dc545945799cf7f190c71bb2}\label{classVotingSystem_1_1OPLElection_ae3217e06dc545945799cf7f190c71bb2}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!sumPartyVotes@{sumPartyVotes}}
+\index{sumPartyVotes@{sumPartyVotes}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{sumPartyVotes()}{sumPartyVotes()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLElection\+::sum\+Party\+Votes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+sum\+Party\+Votes adds up all the votes of each candidate in each individual party 
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_a462fdfc7dc0665f93d2060428eb77326}\label{classVotingSystem_1_1OPLElection_a462fdfc7dc0665f93d2060428eb77326}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!verifyInfo@{verifyInfo}}
+\index{verifyInfo@{verifyInfo}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{verifyInfo()}{verifyInfo()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLElection\+::verify\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+verify\+Info asks the user to verify information. It exits the program if the user says the information is not correct. 
+
+
+
+Implements \mbox{\hyperlink{classVotingSystem_1_1Election_a677cc98656c59a32a53838cd84b2a082}{Voting\+System\+::\+Election}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_ab3c6a9100bbf727cc817ca8197c272db}\label{classVotingSystem_1_1OPLElection_ab3c6a9100bbf727cc817ca8197c272db}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!writeBallotsToAudit@{writeBallotsToAudit}}
+\index{writeBallotsToAudit@{writeBallotsToAudit}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{writeBallotsToAudit()}{writeBallotsToAudit()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+OPLElection\+::write\+Ballots\+To\+Audit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+writes the {\bfseries{BALLOTS}} header, along with number of ballots cast, each ballot\textquotesingle{}s ID, and the contents of each ballot 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_a413d8e7c278111eaf4aa96c2cab20d39}\label{classVotingSystem_1_1OPLElection_a413d8e7c278111eaf4aa96c2cab20d39}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!numAllocatedSeats\_@{numAllocatedSeats\_}}
+\index{numAllocatedSeats\_@{numAllocatedSeats\_}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{numAllocatedSeats\_}{numAllocatedSeats\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+OPLElection\+::num\+Allocated\+Seats\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+num\+Allocated\+Seats\+\_\+ is the number of seats that have already been allocated in an OPL election. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_a0a3d4d9937675172bbe1dbb7cac291b4}\label{classVotingSystem_1_1OPLElection_a0a3d4d9937675172bbe1dbb7cac291b4}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!numParties\_@{numParties\_}}
+\index{numParties\_@{numParties\_}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{numParties\_}{numParties\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+OPLElection\+::num\+Parties\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+num\+Parties\+\_\+ is the number of parties participating in the OPL election. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_a7807359ae9a054a80f0b00373f723853}\label{classVotingSystem_1_1OPLElection_a7807359ae9a054a80f0b00373f723853}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!numSeats\_@{numSeats\_}}
+\index{numSeats\_@{numSeats\_}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{numSeats\_}{numSeats\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+OPLElection\+::num\+Seats\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+num\+Seats\+\_\+ is the amount of seats that need to be allocated for an OPL election currently. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_a08351de5d0a2980a5343143b38356d27}\label{classVotingSystem_1_1OPLElection_a08351de5d0a2980a5343143b38356d27}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!quota\_@{quota\_}}
+\index{quota\_@{quota\_}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{quota\_}{quota\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+OPLElection\+::quota\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+quota\+\_\+ is the calculated value that determines how many votes a party needs to earn one seat during the first allocation. It is the ceiling of num\+Ballots divided by num\+Seats. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1OPLElection_ad7d0deda665e2aff29522c59983f9dcc}\label{classVotingSystem_1_1OPLElection_ad7d0deda665e2aff29522c59983f9dcc}} 
+\index{VotingSystem::OPLElection@{VotingSystem::OPLElection}!totalSeats\_@{totalSeats\_}}
+\index{totalSeats\_@{totalSeats\_}!VotingSystem::OPLElection@{VotingSystem::OPLElection}}
+\doxysubsubsection{\texorpdfstring{totalSeats\_}{totalSeats\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+OPLElection\+::total\+Seats\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+total\+Seats\+\_\+ is the number of seats up for grabs in an OPL election. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/kevin/\+Desktop/repo-\/\+Team14/\+Project2/src/include/\mbox{\hyperlink{OPLElection_8h}{OPLElection.\+h}}\item 
+/mnt/c/\+Users/kevin/\+Desktop/repo-\/\+Team14/\+Project2/src/\mbox{\hyperlink{OPLElection_8cpp}{OPLElection.\+cpp}}\end{DoxyCompactItemize}

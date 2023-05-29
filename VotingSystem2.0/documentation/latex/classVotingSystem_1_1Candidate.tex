@@ -1,0 +1,350 @@
+\hypertarget{classVotingSystem_1_1Candidate}{}\doxysection{Voting\+System\+::Candidate Class Reference}
+\label{classVotingSystem_1_1Candidate}\index{VotingSystem::Candidate@{VotingSystem::Candidate}}
+
+
+A \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} class which used to store candidate information, including name, belonged party, id number, eliminated status.  
+
+
+
+
+{\ttfamily \#include $<$Candidate.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVotingSystem_1_1Candidate_aa0370f5b794121e83f5896c5e2dd983f}{Candidate}} (std\+::string Cname, std\+::string Party\+Name, int Cid)
+\begin{DoxyCompactList}\small\item\em Constructor that initialize candidate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVotingSystem_1_1Candidate_a1fb63eccba5120692f2edb20819d8e2c}{$\sim$\+Candidate}} ()
+\begin{DoxyCompactList}\small\item\em Destructor that delete this object when it goes out of scope. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1Candidate_a50e7cd31dc68665860932987ad2ffea6}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Returns the ID of the candidate stored in the id attribute. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1Candidate_a9555babb846eb95fef6330638e5df8e4}{get\+Num\+Votes}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current number of votes a candidate has in the num\+Votes attribute. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1Candidate_abc81ef2e8c71f6096069f4a07969ab40}{get\+Elimated\+Round}} ()
+\begin{DoxyCompactList}\small\item\em Returns the round number that candidate has been elimimated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVotingSystem_1_1Candidate_a1fa6632d217c83d99e99361fcd5acfe4}{is\+Eliminated}} ()
+\begin{DoxyCompactList}\small\item\em Returns the status of elimimation of this candidate. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classVotingSystem_1_1Candidate_a1ee7f62e1576e4959e3e50979ccd99b9}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Returns the name of a candidate. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classVotingSystem_1_1Candidate_aaccbb9ab26756aa45ea3e7d870b16aa3}{get\+Abbrev\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Returns the abbreviation name of a candidate. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classVotingSystem_1_1Candidate_aa1c6b989747ddc4570891cf0f79a28f3}{get\+Party}} ()
+\begin{DoxyCompactList}\small\item\em Returns the party name of this candidate belongs to. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}} $\ast$ $>$ \mbox{\hyperlink{classVotingSystem_1_1Candidate_a26faeb7a068f28ce70ad4918e88ff4e7}{get\+Ballots}} ()
+\begin{DoxyCompactList}\small\item\em Returns an array containing each ballot cast for that candidate contained in the ballot\+List\+\_\+array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1Candidate_a6ceab4fbd2d5d3bc639839ffceceebd9}{set\+Eliminate}} (int round\+Num)
+\begin{DoxyCompactList}\small\item\em set eliminated\+\_\+ to true and update the eliminated\+Round number as well. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1Candidate_a7c14330a66ac03a71fbf6f8c1ceab2ac}{add\+Ballot}} (\mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Takes a pointer to a ballot and adds that ballot to the candidates ballot array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1Candidate_af697d567853d8fa01475bc4775c07176}{increase\+Num\+Vote}} (int i)
+\begin{DoxyCompactList}\small\item\em Increase this candidate\textquotesingle{}s vote number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classVotingSystem_1_1Candidate_ae9a215350b7b01df9eaf8e9b66865458}{id\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Unique ID that identify this candidate. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1Candidate_a1f1e11edc54471e5cd981820d7256281}{num\+Votes\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Number of votes that this candidate current having. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1Candidate_ac4c52ac6001cd7c6b10890b9ed8e1366}{eliminated\+Round\+\_\+}}
+\begin{DoxyCompactList}\small\item\em At which round, this candidate is eliminated. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVotingSystem_1_1Candidate_a3c7f49e568b5137cafe2a6df8123e187}{eliminated\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Elimination status. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classVotingSystem_1_1Candidate_a091177b5638f8ad497ca64c5565743b5}{name\+\_\+}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} Name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classVotingSystem_1_1Candidate_abd7518869c91645b9802fd4f93b593c4}{abbrev\+Name\+\_\+}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} Abbrev\+Name. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classVotingSystem_1_1Candidate_a06f6ab79b15444a6b7f5892dbc3a6ca9}{party\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Party belongs to. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}} $\ast$ $>$ \mbox{\hyperlink{classVotingSystem_1_1Candidate_a6dba2bb7f65c22756e7064fa2946b8f7}{ballot\+List\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Ballotlist that contaisn all ballot votes to this candidate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} class which used to store candidate information, including name, belonged party, id number, eliminated status. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_aa0370f5b794121e83f5896c5e2dd983f}\label{classVotingSystem_1_1Candidate_aa0370f5b794121e83f5896c5e2dd983f}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!Candidate@{Candidate}}
+\index{Candidate@{Candidate}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{Candidate()}{Candidate()}}
+{\footnotesize\ttfamily Candidate\+::\+Candidate (\begin{DoxyParamCaption}\item[{std\+::string}]{Cname,  }\item[{std\+::string}]{Party\+Name,  }\item[{int}]{Cid }\end{DoxyParamCaption})}
+
+
+
+Constructor that initialize candidate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Cname} & candidate name \\
+\hline
+{\em Party\+Name} & party that this candidate belongs to \\
+\hline
+{\em Cid} & unique ID that identify this candidate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_a1fb63eccba5120692f2edb20819d8e2c}\label{classVotingSystem_1_1Candidate_a1fb63eccba5120692f2edb20819d8e2c}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!````~Candidate@{$\sim$Candidate}}
+\index{````~Candidate@{$\sim$Candidate}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{$\sim$Candidate()}{~Candidate()}}
+{\footnotesize\ttfamily Voting\+System\+::\+Candidate\+::$\sim$\+Candidate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor that delete this object when it goes out of scope. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_a7c14330a66ac03a71fbf6f8c1ceab2ac}\label{classVotingSystem_1_1Candidate_a7c14330a66ac03a71fbf6f8c1ceab2ac}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!addBallot@{addBallot}}
+\index{addBallot@{addBallot}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{addBallot()}{addBallot()}}
+{\footnotesize\ttfamily void Candidate\+::add\+Ballot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+Takes a pointer to a ballot and adds that ballot to the candidates ballot array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & a ballot pointer that need to be attached to this candidate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_aaccbb9ab26756aa45ea3e7d870b16aa3}\label{classVotingSystem_1_1Candidate_aaccbb9ab26756aa45ea3e7d870b16aa3}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!getAbbrevName@{getAbbrevName}}
+\index{getAbbrevName@{getAbbrevName}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{getAbbrevName()}{getAbbrevName()}}
+{\footnotesize\ttfamily string Candidate\+::get\+Abbrev\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the abbreviation name of a candidate. 
+
+\begin{DoxyReturn}{Returns}
+candidate Abbrevname\+\_\+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_a26faeb7a068f28ce70ad4918e88ff4e7}\label{classVotingSystem_1_1Candidate_a26faeb7a068f28ce70ad4918e88ff4e7}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!getBallots@{getBallots}}
+\index{getBallots@{getBallots}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{getBallots()}{getBallots()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}} $\ast$ $>$ Candidate\+::get\+Ballots (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns an array containing each ballot cast for that candidate contained in the ballot\+List\+\_\+array. 
+
+\begin{DoxyReturn}{Returns}
+ballot\+List\+\_\+array 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_abc81ef2e8c71f6096069f4a07969ab40}\label{classVotingSystem_1_1Candidate_abc81ef2e8c71f6096069f4a07969ab40}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!getElimatedRound@{getElimatedRound}}
+\index{getElimatedRound@{getElimatedRound}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{getElimatedRound()}{getElimatedRound()}}
+{\footnotesize\ttfamily int Candidate\+::get\+Elimated\+Round (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the round number that candidate has been elimimated. 
+
+\begin{DoxyReturn}{Returns}
+Elimated\+Round 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_a50e7cd31dc68665860932987ad2ffea6}\label{classVotingSystem_1_1Candidate_a50e7cd31dc68665860932987ad2ffea6}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!getId@{getId}}
+\index{getId@{getId}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily int Candidate\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the ID of the candidate stored in the id attribute. 
+
+\begin{DoxyReturn}{Returns}
+candidate\textquotesingle{}s unique ID 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_a1ee7f62e1576e4959e3e50979ccd99b9}\label{classVotingSystem_1_1Candidate_a1ee7f62e1576e4959e3e50979ccd99b9}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!getName@{getName}}
+\index{getName@{getName}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Candidate\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the name of a candidate. 
+
+\begin{DoxyReturn}{Returns}
+candidate name\+\_\+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_a9555babb846eb95fef6330638e5df8e4}\label{classVotingSystem_1_1Candidate_a9555babb846eb95fef6330638e5df8e4}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!getNumVotes@{getNumVotes}}
+\index{getNumVotes@{getNumVotes}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{getNumVotes()}{getNumVotes()}}
+{\footnotesize\ttfamily int Candidate\+::get\+Num\+Votes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the current number of votes a candidate has in the num\+Votes attribute. 
+
+\begin{DoxyReturn}{Returns}
+number of votes this candidate current has 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_aa1c6b989747ddc4570891cf0f79a28f3}\label{classVotingSystem_1_1Candidate_aa1c6b989747ddc4570891cf0f79a28f3}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!getParty@{getParty}}
+\index{getParty@{getParty}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{getParty()}{getParty()}}
+{\footnotesize\ttfamily string Candidate\+::get\+Party (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the party name of this candidate belongs to. 
+
+\begin{DoxyReturn}{Returns}
+party name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_af697d567853d8fa01475bc4775c07176}\label{classVotingSystem_1_1Candidate_af697d567853d8fa01475bc4775c07176}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!increaseNumVote@{increaseNumVote}}
+\index{increaseNumVote@{increaseNumVote}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{increaseNumVote()}{increaseNumVote()}}
+{\footnotesize\ttfamily void Candidate\+::increase\+Num\+Vote (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Increase this candidate\textquotesingle{}s vote number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & how many votes added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_a1fa6632d217c83d99e99361fcd5acfe4}\label{classVotingSystem_1_1Candidate_a1fa6632d217c83d99e99361fcd5acfe4}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!isEliminated@{isEliminated}}
+\index{isEliminated@{isEliminated}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{isEliminated()}{isEliminated()}}
+{\footnotesize\ttfamily bool Candidate\+::is\+Eliminated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the status of elimimation of this candidate. 
+
+\begin{DoxyReturn}{Returns}
+True (this candidate has been eliminated.） False（ not eliminated.） 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_a6ceab4fbd2d5d3bc639839ffceceebd9}\label{classVotingSystem_1_1Candidate_a6ceab4fbd2d5d3bc639839ffceceebd9}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!setEliminate@{setEliminate}}
+\index{setEliminate@{setEliminate}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{setEliminate()}{setEliminate()}}
+{\footnotesize\ttfamily void Candidate\+::set\+Eliminate (\begin{DoxyParamCaption}\item[{int}]{round\+Num }\end{DoxyParamCaption})}
+
+
+
+set eliminated\+\_\+ to true and update the eliminated\+Round number as well. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em round\+Num} & the round number that this candidate been eleminated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_abd7518869c91645b9802fd4f93b593c4}\label{classVotingSystem_1_1Candidate_abd7518869c91645b9802fd4f93b593c4}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!abbrevName\_@{abbrevName\_}}
+\index{abbrevName\_@{abbrevName\_}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{abbrevName\_}{abbrevName\_}}
+{\footnotesize\ttfamily std\+::string Voting\+System\+::\+Candidate\+::abbrev\+Name\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} Abbrev\+Name. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_a6dba2bb7f65c22756e7064fa2946b8f7}\label{classVotingSystem_1_1Candidate_a6dba2bb7f65c22756e7064fa2946b8f7}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!ballotList\_@{ballotList\_}}
+\index{ballotList\_@{ballotList\_}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{ballotList\_}{ballotList\_}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}} $\ast$$>$ Voting\+System\+::\+Candidate\+::ballot\+List\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ballotlist that contaisn all ballot votes to this candidate. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_a3c7f49e568b5137cafe2a6df8123e187}\label{classVotingSystem_1_1Candidate_a3c7f49e568b5137cafe2a6df8123e187}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!eliminated\_@{eliminated\_}}
+\index{eliminated\_@{eliminated\_}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{eliminated\_}{eliminated\_}}
+{\footnotesize\ttfamily bool Voting\+System\+::\+Candidate\+::eliminated\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Elimination status. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_ac4c52ac6001cd7c6b10890b9ed8e1366}\label{classVotingSystem_1_1Candidate_ac4c52ac6001cd7c6b10890b9ed8e1366}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!eliminatedRound\_@{eliminatedRound\_}}
+\index{eliminatedRound\_@{eliminatedRound\_}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{eliminatedRound\_}{eliminatedRound\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+Candidate\+::eliminated\+Round\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+At which round, this candidate is eliminated. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_ae9a215350b7b01df9eaf8e9b66865458}\label{classVotingSystem_1_1Candidate_ae9a215350b7b01df9eaf8e9b66865458}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!id\_@{id\_}}
+\index{id\_@{id\_}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{id\_}{id\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+Candidate\+::id\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Unique ID that identify this candidate. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_a091177b5638f8ad497ca64c5565743b5}\label{classVotingSystem_1_1Candidate_a091177b5638f8ad497ca64c5565743b5}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!name\_@{name\_}}
+\index{name\_@{name\_}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{name\_}{name\_}}
+{\footnotesize\ttfamily std\+::string Voting\+System\+::\+Candidate\+::name\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} Name. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_a1f1e11edc54471e5cd981820d7256281}\label{classVotingSystem_1_1Candidate_a1f1e11edc54471e5cd981820d7256281}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!numVotes\_@{numVotes\_}}
+\index{numVotes\_@{numVotes\_}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{numVotes\_}{numVotes\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+Candidate\+::num\+Votes\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of votes that this candidate current having. 
+
+\mbox{\Hypertarget{classVotingSystem_1_1Candidate_a06f6ab79b15444a6b7f5892dbc3a6ca9}\label{classVotingSystem_1_1Candidate_a06f6ab79b15444a6b7f5892dbc3a6ca9}} 
+\index{VotingSystem::Candidate@{VotingSystem::Candidate}!party\_@{party\_}}
+\index{party\_@{party\_}!VotingSystem::Candidate@{VotingSystem::Candidate}}
+\doxysubsubsection{\texorpdfstring{party\_}{party\_}}
+{\footnotesize\ttfamily std\+::string Voting\+System\+::\+Candidate\+::party\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Party belongs to. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/kevin/\+Desktop/repo-\/\+Team14/\+Project2/src/include/\mbox{\hyperlink{Candidate_8h}{Candidate.\+h}}\item 
+/mnt/c/\+Users/kevin/\+Desktop/repo-\/\+Team14/\+Project2/src/\mbox{\hyperlink{Candidate_8cpp}{Candidate.\+cpp}}\end{DoxyCompactItemize}

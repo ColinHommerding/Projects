@@ -1,0 +1,12 @@
+.vs
+
+#Visual Studio files
+*.sln
+*.vcxproj
+*.filters
+*.user
+
+x64
+
+*.pdf
+TODO.txt

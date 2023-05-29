@@ -1,0 +1,4 @@
+/home/cwalaszek00/College/5801/repo-Team14/Project1/src/CMakeFiles/rebuild_cache.dir
+/home/cwalaszek00/College/5801/repo-Team14/Project1/src/CMakeFiles/edit_cache.dir
+/home/cwalaszek00/College/5801/repo-Team14/Project1/src/CMakeFiles/Project.dir
+/home/cwalaszek00/College/5801/repo-Team14/Project1/src/CMakeFiles/Project_lib.dir

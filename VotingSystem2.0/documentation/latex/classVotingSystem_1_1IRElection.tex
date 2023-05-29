@@ -1,0 +1,424 @@
+\hypertarget{classVotingSystem_1_1IRElection}{}\doxysection{Voting\+System\+::IRElection Class Reference}
+\label{classVotingSystem_1_1IRElection}\index{VotingSystem::IRElection@{VotingSystem::IRElection}}
+
+
+Class that handles Instant Runoff Elections.  
+
+
+
+
+{\ttfamily \#include $<$IRElection.\+h$>$}
+
+
+
+Inheritance diagram for Voting\+System\+::IRElection\+:
+% FIG 0
+
+
+Collaboration diagram for Voting\+System\+::IRElection\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVotingSystem_1_1IRElection_a020200440808b441eb9304bc03e5d626}{IRElection}} (std\+::string el\+Name, std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{main_8cpp_a0695804b4a1f9cf9f3da28ac4a9c638e}{filenames\+\_\+vec}}, int debug)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVotingSystem_1_1IRElection}{IRElection}} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVotingSystem_1_1IRElection_aa6dd80b221c0006eac7b0ea74df8af5f}{$\sim$\+IRElection}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVotingSystem_1_1IRElection}{IRElection}} destructor. \end{DoxyCompactList}\item 
+std\+::ifstream $\ast$ \mbox{\hyperlink{classVotingSystem_1_1IRElection_ac2759b7975a04246f5bb1fe6444e43e8}{get\+Input\+File}} ()
+\begin{DoxyCompactList}\small\item\em input\+File getter \end{DoxyCompactList}\item 
+std\+::ofstream $\ast$ \mbox{\hyperlink{classVotingSystem_1_1IRElection_a6081007dd5f485f3a895f0c984672a43}{get\+Audit\+File}} ()
+\begin{DoxyCompactList}\small\item\em audit\+File getter \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1IRElection_abc4161143eace6ad7dfde4c2b623de57}{run}} ()
+\begin{DoxyCompactList}\small\item\em Runs \mbox{\hyperlink{classVotingSystem_1_1IRElection}{IRElection}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVotingSystem_1_1IRElection_a6679033ce10426dac3403d518fdba0c3}{check\+\_\+header\+\_\+consistency}} ()
+\begin{DoxyCompactList}\small\item\em check consistency header \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1IRElection_aafd99dcd6543dc0c3c58888cc717485c}{read\+Header}} (int fileno)
+\begin{DoxyCompactList}\small\item\em Reads first four lines of input file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1IRElection_a6d4888a8ef0f73d84991624b5eb5c385}{verify\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Verify input file information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1IRElection_af1a052476bfa314109810b6dbf3ab35e}{read\+Ballots}} (int start\+ID=0)
+\begin{DoxyCompactList}\small\item\em Parse ballots. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1IRElection_a29f4e520609486226204095f7506d932}{write\+Ballots\+To\+Audit}} ()
+\begin{DoxyCompactList}\small\item\em Writes to the audit file information about the ballots. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1IRElection_a0797c3b30a1b7ed199c281766baa14e3}{distribute\+Ballot}} (\mbox{\hyperlink{classVotingSystem_1_1IRBallot}{IRBallot}} $\ast$ballot)
+\begin{DoxyCompactList}\small\item\em Assigns ballot to candidate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1IRElection_a921396d667d54c1eef9179b6f5dce709}{add\+Ranked\+Candidates}} (\mbox{\hyperlink{classVotingSystem_1_1IRBallot}{IRBallot}} $\ast$ballot, int places\mbox{[}$\,$\mbox{]}, int num\+Unranked)
+\begin{DoxyCompactList}\small\item\em Helper function for read\+Ballot. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$ \mbox{\hyperlink{classVotingSystem_1_1IRElection_a61ce73b6f21027f4e00da24c4fbcc3d3}{find\+Winner}} ()
+\begin{DoxyCompactList}\small\item\em finds a winner given the current state of the election \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$ \mbox{\hyperlink{classVotingSystem_1_1IRElection_a4f8729f4e304da34039a412bb7fba89d}{find\+Last\+Place}} ()
+\begin{DoxyCompactList}\small\item\em Returns candidate in last place. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1IRElection_ab9cbd175bc0deae2a038304b9733f281}{run\+Runoff}} ()
+\begin{DoxyCompactList}\small\item\em Eliminates last place candidate and redistributes votes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1IRElection_a73d71d5cfa87b86c436a85bb3717923f}{redistribute}} (\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$biggest\+Loser)
+\begin{DoxyCompactList}\small\item\em Redistributes votes of eliminated candidate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1IRElection_a181d15deb16a985540208c73e0b526da}{generate\+Term\+Output}} ()
+\begin{DoxyCompactList}\small\item\em generate\+Term\+Output is not written yet -\/ but it will output text to the terminal with an overview of the election. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVotingSystem_1_1IRElection_ac82a82a54cb8e19d72ee58d95e24a4d1}{generate\+Media\+File}} ()
+\begin{DoxyCompactList}\small\item\em generate\+Media\+File is not written yet -\/ but it will create a media file with an overview of the election. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classVotingSystem_1_1IRElection_adc19d4fe8efbd07211bf234cf752fc26}{num\+Ballots\+To\+Win\+\_\+}}
+\begin{DoxyCompactList}\small\item\em number of votes a candidate must have to win by majority \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1IRElection_a7beca1cae7c7a180e87eb162b3675238}{round\+Num\+\_\+}}
+\begin{DoxyCompactList}\small\item\em the current round \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1IRElection_ac862bd7bb0c236c5fe891af47ac6dec0}{num\+Rounds\+\_\+}}
+\begin{DoxyCompactList}\small\item\em the number of rounds needed to complete the election \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1IRElection_adf59901ced2c42e18eda88ac597cf317}{elim\+Ballots\+\_\+}}
+\begin{DoxyCompactList}\small\item\em the number of ballots that have been discarded \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVotingSystem_1_1IRElection_aed10e78183c2b1610efbff154c410a97}{candidates\+Left\+\_\+}}
+\begin{DoxyCompactList}\small\item\em the number of candidates that have not been eliminated \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class that handles Instant Runoff Elections. 
+
+The \mbox{\hyperlink{classVotingSystem_1_1IRElection_abc4161143eace6ad7dfde4c2b623de57}{run()}} method is the main driver function and will be called from main after the \mbox{\hyperlink{classVotingSystem_1_1IRElection}{IRElection}} object is created. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1IRElection_a020200440808b441eb9304bc03e5d626}\label{classVotingSystem_1_1IRElection_a020200440808b441eb9304bc03e5d626}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!IRElection@{IRElection}}
+\index{IRElection@{IRElection}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{IRElection()}{IRElection()}}
+{\footnotesize\ttfamily Voting\+System\+::\+IRElection\+::\+IRElection (\begin{DoxyParamCaption}\item[{std\+::string}]{el\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{filenames\+\_\+vec,  }\item[{int}]{debug }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classVotingSystem_1_1IRElection}{IRElection}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el\+Name} & the name of the election \\
+\hline
+{\em filenames\+\_\+vec} & a vector of strings containing the names of all the input files \\
+\hline
+{\em debug} & a integer that toggles non-\/deterministic mode\\
+\hline
+\end{DoxyParams}
+Sets the name of the election and the vector containing all IR election input file names. \mbox{\Hypertarget{classVotingSystem_1_1IRElection_aa6dd80b221c0006eac7b0ea74df8af5f}\label{classVotingSystem_1_1IRElection_aa6dd80b221c0006eac7b0ea74df8af5f}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!````~IRElection@{$\sim$IRElection}}
+\index{````~IRElection@{$\sim$IRElection}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{$\sim$IRElection()}{~IRElection()}}
+{\footnotesize\ttfamily Voting\+System\+::\+IRElection\+::$\sim$\+IRElection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classVotingSystem_1_1IRElection}{IRElection}} destructor. 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1IRElection_a921396d667d54c1eef9179b6f5dce709}\label{classVotingSystem_1_1IRElection_a921396d667d54c1eef9179b6f5dce709}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!addRankedCandidates@{addRankedCandidates}}
+\index{addRankedCandidates@{addRankedCandidates}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{addRankedCandidates()}{addRankedCandidates()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+IRElection\+::add\+Ranked\+Candidates (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVotingSystem_1_1IRBallot}{IRBallot}} $\ast$}]{ballot,  }\item[{int}]{places\mbox{[}$\,$\mbox{]},  }\item[{int}]{num\+Unranked }\end{DoxyParamCaption})}
+
+
+
+Helper function for read\+Ballot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ballot} & the \mbox{\hyperlink{classVotingSystem_1_1IRBallot}{IRBallot}} to add candiates into \\
+\hline
+{\em places} & an int array representing a ballot\textquotesingle{}s ranked choices, parsed from the input file \\
+\hline
+{\em num\+Unranked} & an int representing how many candidates the ballot did not vote for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Adds candidates to a ballot in the correct order (first choice added first, second choice added second ... nth choice added nth). \mbox{\Hypertarget{classVotingSystem_1_1IRElection_a6679033ce10426dac3403d518fdba0c3}\label{classVotingSystem_1_1IRElection_a6679033ce10426dac3403d518fdba0c3}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!check\_header\_consistency@{check\_header\_consistency}}
+\index{check\_header\_consistency@{check\_header\_consistency}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{check\_header\_consistency()}{check\_header\_consistency()}}
+{\footnotesize\ttfamily bool Voting\+System\+::\+IRElection\+::check\+\_\+header\+\_\+consistency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+check consistency header 
+
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+return true if input files has the same header, false otherwise open input files
+
+Implements \mbox{\hyperlink{classVotingSystem_1_1Election_a105ecb4c32caaa881145464441cc0c59}{Voting\+System\+::\+Election}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1IRElection_a0797c3b30a1b7ed199c281766baa14e3}\label{classVotingSystem_1_1IRElection_a0797c3b30a1b7ed199c281766baa14e3}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!distributeBallot@{distributeBallot}}
+\index{distributeBallot@{distributeBallot}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{distributeBallot()}{distributeBallot()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+IRElection\+::distribute\+Ballot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVotingSystem_1_1IRBallot}{IRBallot}} $\ast$}]{ballot }\end{DoxyParamCaption})}
+
+
+
+Assigns ballot to candidate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ballot} & the \mbox{\hyperlink{classVotingSystem_1_1IRBallot}{IRBallot}} to be distributed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Assigns the given \mbox{\hyperlink{classVotingSystem_1_1IRBallot}{IRBallot}} to its first choice candidate \mbox{\Hypertarget{classVotingSystem_1_1IRElection_a4f8729f4e304da34039a412bb7fba89d}\label{classVotingSystem_1_1IRElection_a4f8729f4e304da34039a412bb7fba89d}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!findLastPlace@{findLastPlace}}
+\index{findLastPlace@{findLastPlace}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{findLastPlace()}{findLastPlace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$ Voting\+System\+::\+IRElection\+::find\+Last\+Place (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns candidate in last place. 
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+find\+Last\+Place returns the candidate with the fewest votes, to be eliminated. If multiple candidates have the fewest votes, randomly selects one of them. Logs to the audit file which candidate was selected. \mbox{\Hypertarget{classVotingSystem_1_1IRElection_a61ce73b6f21027f4e00da24c4fbcc3d3}\label{classVotingSystem_1_1IRElection_a61ce73b6f21027f4e00da24c4fbcc3d3}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!findWinner@{findWinner}}
+\index{findWinner@{findWinner}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{findWinner()}{findWinner()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$ Voting\+System\+::\+IRElection\+::find\+Winner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+finds a winner given the current state of the election 
+
+\begin{DoxyReturn}{Returns}
+a pointer to the winning candidate, if applicable
+\end{DoxyReturn}
+Returns any candidate who has the majority of all votes. If only two candidates remain, returns the candidate with more votes. If no winner can be called, returns nullptr. Logs to the audit file the current round, the vote distribution in that round, and whether a candidate has won or not. \mbox{\Hypertarget{classVotingSystem_1_1IRElection_ac82a82a54cb8e19d72ee58d95e24a4d1}\label{classVotingSystem_1_1IRElection_ac82a82a54cb8e19d72ee58d95e24a4d1}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!generateMediaFile@{generateMediaFile}}
+\index{generateMediaFile@{generateMediaFile}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{generateMediaFile()}{generateMediaFile()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+IRElection\+::generate\+Media\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+generate\+Media\+File is not written yet -\/ but it will create a media file with an overview of the election. 
+
+
+
+Implements \mbox{\hyperlink{classVotingSystem_1_1Election_aeb742000c233bd079d8a296f26fd9f3a}{Voting\+System\+::\+Election}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1IRElection_a181d15deb16a985540208c73e0b526da}\label{classVotingSystem_1_1IRElection_a181d15deb16a985540208c73e0b526da}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!generateTermOutput@{generateTermOutput}}
+\index{generateTermOutput@{generateTermOutput}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{generateTermOutput()}{generateTermOutput()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+IRElection\+::generate\+Term\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+generate\+Term\+Output is not written yet -\/ but it will output text to the terminal with an overview of the election. 
+
+
+
+Implements \mbox{\hyperlink{classVotingSystem_1_1Election_aa3fbaaffe23e87ccf965517143add9e6}{Voting\+System\+::\+Election}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1IRElection_a6081007dd5f485f3a895f0c984672a43}\label{classVotingSystem_1_1IRElection_a6081007dd5f485f3a895f0c984672a43}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!getAuditFile@{getAuditFile}}
+\index{getAuditFile@{getAuditFile}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{getAuditFile()}{getAuditFile()}}
+{\footnotesize\ttfamily std\+::ofstream$\ast$ Voting\+System\+::\+IRElection\+::get\+Audit\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+audit\+File getter 
+
+\begin{DoxyReturn}{Returns}
+an ofstream object containing the audit file 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1IRElection_ac2759b7975a04246f5bb1fe6444e43e8}\label{classVotingSystem_1_1IRElection_ac2759b7975a04246f5bb1fe6444e43e8}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!getInputFile@{getInputFile}}
+\index{getInputFile@{getInputFile}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{getInputFile()}{getInputFile()}}
+{\footnotesize\ttfamily std\+::ifstream$\ast$ Voting\+System\+::\+IRElection\+::get\+Input\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+input\+File getter 
+
+\begin{DoxyReturn}{Returns}
+an ifstream object containing the input file 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVotingSystem_1_1IRElection_af1a052476bfa314109810b6dbf3ab35e}\label{classVotingSystem_1_1IRElection_af1a052476bfa314109810b6dbf3ab35e}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!readBallots@{readBallots}}
+\index{readBallots@{readBallots}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{readBallots()}{readBallots()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+IRElection\+::read\+Ballots (\begin{DoxyParamCaption}\item[{int}]{start\+ID = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Parse ballots. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+ID} & the value from which to start the ballot ID-\/ing from. Defaults at 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Iterates through the rest of all of the IR election input files and creates a \mbox{\hyperlink{classVotingSystem_1_1Ballot}{Ballot}} object with the proper information for each line. Logs who each ballot voted for in the audit file.\+Includes calls to \mbox{\hyperlink{classVotingSystem_1_1IRElection_a921396d667d54c1eef9179b6f5dce709}{add\+Ranked\+Candidates()}} and also \mbox{\hyperlink{classVotingSystem_1_1IRElection_a0797c3b30a1b7ed199c281766baa14e3}{distribute\+Ballot()}} only if at least half of the candidates on each ballot are ranked, as specified by the product owner. \mbox{\Hypertarget{classVotingSystem_1_1IRElection_aafd99dcd6543dc0c3c58888cc717485c}\label{classVotingSystem_1_1IRElection_aafd99dcd6543dc0c3c58888cc717485c}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!readHeader@{readHeader}}
+\index{readHeader@{readHeader}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{readHeader()}{readHeader()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+IRElection\+::read\+Header (\begin{DoxyParamCaption}\item[{int}]{fileno }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reads first four lines of input file. 
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+read\+Header is specific to \mbox{\hyperlink{classVotingSystem_1_1IRElection}{IRElection}} files. It parses the number of candidates, number of ballots, and candidates from all of the input files, stores that info, calculates any derived information like num\+Ballots\+To\+Win, and logs the \mbox{\hyperlink{classVotingSystem_1_1Election}{Election}} Overview and Candidates sections to the audit file. 
+
+Implements \mbox{\hyperlink{classVotingSystem_1_1Election_a80ccb7a8c3e1b092e1666cea16c2b7c3}{Voting\+System\+::\+Election}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1IRElection_a73d71d5cfa87b86c436a85bb3717923f}\label{classVotingSystem_1_1IRElection_a73d71d5cfa87b86c436a85bb3717923f}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!redistribute@{redistribute}}
+\index{redistribute@{redistribute}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{redistribute()}{redistribute()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+IRElection\+::redistribute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVotingSystem_1_1Candidate}{Candidate}} $\ast$}]{biggest\+Loser }\end{DoxyParamCaption})}
+
+
+
+Redistributes votes of eliminated candidate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em biggest\+Loser} & the candidate set to be eliminated from contention \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Takes a candidate and reassigns all of their ballots based on each ballots next ranked candidate who is also not eliminated. If a ballot has no valid choices left, that ballot is discarded. Logs to the audit file which ballots went to which candidates, and which ballots were eliminated. \mbox{\Hypertarget{classVotingSystem_1_1IRElection_abc4161143eace6ad7dfde4c2b623de57}\label{classVotingSystem_1_1IRElection_abc4161143eace6ad7dfde4c2b623de57}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!run@{run}}
+\index{run@{run}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+IRElection\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Runs \mbox{\hyperlink{classVotingSystem_1_1IRElection}{IRElection}}. 
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Run is the main driver function, and makes all the needed function calls to successfully run and log the election. 
+
+Implements \mbox{\hyperlink{classVotingSystem_1_1Election_a019d95188c8f3d6ea2ea74c388e3e962}{Voting\+System\+::\+Election}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1IRElection_ab9cbd175bc0deae2a038304b9733f281}\label{classVotingSystem_1_1IRElection_ab9cbd175bc0deae2a038304b9733f281}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!runRunoff@{runRunoff}}
+\index{runRunoff@{runRunoff}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{runRunoff()}{runRunoff()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+IRElection\+::run\+Runoff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Eliminates last place candidate and redistributes votes. 
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Uses \mbox{\hyperlink{classVotingSystem_1_1IRElection_a4f8729f4e304da34039a412bb7fba89d}{find\+Last\+Place()}} and \mbox{\hyperlink{classVotingSystem_1_1IRElection_a73d71d5cfa87b86c436a85bb3717923f}{redistribute()}} functions to find the candidate in last place, marks them as eliminated, and redistribute their votes to the remaining candidates. \mbox{\Hypertarget{classVotingSystem_1_1IRElection_a6d4888a8ef0f73d84991624b5eb5c385}\label{classVotingSystem_1_1IRElection_a6d4888a8ef0f73d84991624b5eb5c385}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!verifyInfo@{verifyInfo}}
+\index{verifyInfo@{verifyInfo}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{verifyInfo()}{verifyInfo()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+IRElection\+::verify\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Verify input file information. 
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Asks user to verify the candidates and election information by typing Y/N into the terminal. \mbox{\hyperlink{classVotingSystem_1_1Election}{Election}} calculation continues if Y, while audit file is deleted and program terminates if N. 
+
+Implements \mbox{\hyperlink{classVotingSystem_1_1Election_a677cc98656c59a32a53838cd84b2a082}{Voting\+System\+::\+Election}}.
+
+\mbox{\Hypertarget{classVotingSystem_1_1IRElection_a29f4e520609486226204095f7506d932}\label{classVotingSystem_1_1IRElection_a29f4e520609486226204095f7506d932}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!writeBallotsToAudit@{writeBallotsToAudit}}
+\index{writeBallotsToAudit@{writeBallotsToAudit}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{writeBallotsToAudit()}{writeBallotsToAudit()}}
+{\footnotesize\ttfamily void Voting\+System\+::\+IRElection\+::write\+Ballots\+To\+Audit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Writes to the audit file information about the ballots. 
+
+\begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Writes the number of ballots cast, the IDs of each ballot, the number of votes needed to to reach a majority, and a list of each ballot and its contents, to the audit file. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVotingSystem_1_1IRElection_aed10e78183c2b1610efbff154c410a97}\label{classVotingSystem_1_1IRElection_aed10e78183c2b1610efbff154c410a97}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!candidatesLeft\_@{candidatesLeft\_}}
+\index{candidatesLeft\_@{candidatesLeft\_}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{candidatesLeft\_}{candidatesLeft\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+IRElection\+::candidates\+Left\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the number of candidates that have not been eliminated 
+
+\mbox{\Hypertarget{classVotingSystem_1_1IRElection_adf59901ced2c42e18eda88ac597cf317}\label{classVotingSystem_1_1IRElection_adf59901ced2c42e18eda88ac597cf317}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!elimBallots\_@{elimBallots\_}}
+\index{elimBallots\_@{elimBallots\_}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{elimBallots\_}{elimBallots\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+IRElection\+::elim\+Ballots\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the number of ballots that have been discarded 
+
+\mbox{\Hypertarget{classVotingSystem_1_1IRElection_adc19d4fe8efbd07211bf234cf752fc26}\label{classVotingSystem_1_1IRElection_adc19d4fe8efbd07211bf234cf752fc26}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!numBallotsToWin\_@{numBallotsToWin\_}}
+\index{numBallotsToWin\_@{numBallotsToWin\_}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{numBallotsToWin\_}{numBallotsToWin\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+IRElection\+::num\+Ballots\+To\+Win\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+number of votes a candidate must have to win by majority 
+
+\mbox{\Hypertarget{classVotingSystem_1_1IRElection_ac862bd7bb0c236c5fe891af47ac6dec0}\label{classVotingSystem_1_1IRElection_ac862bd7bb0c236c5fe891af47ac6dec0}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!numRounds\_@{numRounds\_}}
+\index{numRounds\_@{numRounds\_}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{numRounds\_}{numRounds\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+IRElection\+::num\+Rounds\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the number of rounds needed to complete the election 
+
+\mbox{\Hypertarget{classVotingSystem_1_1IRElection_a7beca1cae7c7a180e87eb162b3675238}\label{classVotingSystem_1_1IRElection_a7beca1cae7c7a180e87eb162b3675238}} 
+\index{VotingSystem::IRElection@{VotingSystem::IRElection}!roundNum\_@{roundNum\_}}
+\index{roundNum\_@{roundNum\_}!VotingSystem::IRElection@{VotingSystem::IRElection}}
+\doxysubsubsection{\texorpdfstring{roundNum\_}{roundNum\_}}
+{\footnotesize\ttfamily int Voting\+System\+::\+IRElection\+::round\+Num\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the current round 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/\+Users/kevin/\+Desktop/repo-\/\+Team14/\+Project2/src/include/\mbox{\hyperlink{IRElection_8h}{IRElection.\+h}}\item 
+/mnt/c/\+Users/kevin/\+Desktop/repo-\/\+Team14/\+Project2/src/\mbox{\hyperlink{IRElection_8cpp}{IRElection.\+cpp}}\end{DoxyCompactItemize}

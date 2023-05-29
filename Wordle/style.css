@@ -1,0 +1,130 @@
+h1 {
+  text-align: center;
+  color: blue;
+  font-size: 400%;
+}
+
+body {
+  background-color: gray;
+}
+
+.parent {
+  text-align: center;
+}
+
+.parentAlt {
+  text-align: center;
+  margin-top: 1px;
+}
+
+.parentKeyboard {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.parentKeyboardAlt {
+  text-align: center;
+  margin-top: 1px;
+}
+
+.winLose {
+  text-align: center;
+  font-size: 200%;
+  margin-top: 10px;
+  color: yellow;
+}
+
+.box{
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border: 1px solid black;
+  margin-left: 0;
+  margin-top: 0;
+  padding: 0;
+  background-color: white;
+  vertical-align: top;
+  font-size: 400%;
+
+}
+
+.boxKey{
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid black;
+  margin-left: 0;
+  margin-bottom: 0px;
+  padding: 0px;
+  background-color: white;
+  text-align: center;
+  display: inline-block;
+}
+
+.usedKey{
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid black;
+  margin-left: 0;
+  margin-bottom: 0px;
+  padding: 0px;
+  background-color: gray;
+  text-align: center;
+  display: inline-block;
+}
+
+.greenKey{
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid black;
+  margin-left: 0;
+  margin-bottom: 0px;
+  padding: 0px;
+  background-color: green;
+  text-align: center;
+  display: inline-block;
+}
+
+.yellowKey{
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid black;
+  margin-left: 0;
+  margin-bottom: 0px;
+  padding: 0px;
+  background-color: yellow;
+  text-align: center;
+  display: inline-block;
+}
+
+.deleteKey{
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid black;
+  margin-left: 0;
+  margin-bottom: 0px;
+  padding: 0px;
+  background-color: white;
+  text-align: center;
+  display: inline-block;
+}
+
+.enterKey{
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid black;
+  margin-left: 0;
+  margin-bottom: 0px;
+  padding: 0px;
+  background-color: white;
+  text-align: center;
+  display: inline-block;
+}
+
+

@@ -1,0 +1,32 @@
+\label{index_md_Description}%
+\Hypertarget{index_md_Description}%
+Team14 (Ding, Gude, Hommerding, Walaszek)
+
+The Voting System is a tool that people can use to calculate and analyze results for voting.
+
+This system will be designed to maximize productivity by automating the counting of ballots and generating an accurate result.
+
+Users can use it to give results to the media and produce a detailed audit file that allows the user to review the development of the election.\hypertarget{index_autotoc_md1}{}\doxysection{repo-\/\+Team14}\label{index_autotoc_md1}
+Team14 (Ding, Gude, Hommerding, Walaszek)
+
+This repository contains Team 14\textquotesingle{}s Voting System2.\+0, along with its Software Requirements Specification and Software Design Document.\hypertarget{index_autotoc_md2}{}\doxysubsection{To see the Doxygen http}\label{index_autotoc_md2}
+Navigate to {\ttfamily repo-\/\+Team14/\+Project2/documentation/html/} folder, and double click {\ttfamily index.\+http}.\hypertarget{index_autotoc_md3}{}\doxysubsection{To run the Voting System2.\+0}\label{index_autotoc_md3}
+
+\begin{DoxyItemize}
+\item Clone this repo to a directory of your choice
+\item Navigate to {\ttfamily repo\+\_\+path/repo-\/\+Team14/\+Project2} folder
+\item Type in {\ttfamily chmod u+x ./bin/$\ast$} to enable the bash scripts.
+\item Create a build folder in the Project2/ directory with mkdir build
+\item Build the program by running {\ttfamily ./bin/build.sh}
+\item Run the program from {\ttfamily Project2} directory by using the command {\ttfamily ./bin/run.sh}.\textbackslash{} Upon program completion the resulting audit file and media file will be present in the {\ttfamily /\+Project2}\textbackslash{} directory.
+\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysubsection{Testing and Debug mode}\label{index_autotoc_md4}
+
+\begin{DoxyItemize}
+\item The executable files themselves can be found at {\ttfamily ./build/src/\+Voting\+System} for the program and at\textbackslash{} {\ttfamily ./build/testing/\+Voting\+System\+\_\+test} for the Google\+Test files.
+\item To run the program in debug mode, use {\ttfamily ./bin/debug.sh} from the {\ttfamily /\+Project2} directory or directly by running the executable with a {\ttfamily -\/d} flag, i.\+e. {\ttfamily ./\+Voting\+System -\/d}.
+\end{DoxyItemize}\hypertarget{index_autotoc_md5}{}\doxysubsection{Notes}\label{index_autotoc_md5}
+This program comes with many test input files, found in {\ttfamily testing/\{IR,OPL,PO\}\+\_\+input\+\_\+files}, which can be\textbackslash{} entered as input when prompted by the program. (UPDATE) Enter the full path from the {\ttfamily /\+Project2/} directory when\textbackslash{} entering these files, e.\+g. {\ttfamily /testing/\+IR\+\_\+input\+\_\+files/\+IR\+\_\+stress\+\_\+test.csv} to input the file {\ttfamily IR\+\_\+stress\+\_\+test.\+csv}
+
+To run unit/system tests, ensure you are in the {\ttfamily repo-\/\+Team14/\+Project2} directory and run {\ttfamily ./bin/test.sh}
+
+To run {\ttfamily make} and {\ttfamily make clean} commands, use {\ttfamily ./bin/make.sh} and {\ttfamily ./bin/clean.sh}, respectively 

@@ -1,0 +1,10 @@
+var searchData=
+[
+  ['rankcandidatesinparties_250',['rankCandidatesInParties',['../classVotingSystem_1_1OPLElection.html#ae4aa65f0dca0add2113ac4c15d1ba625',1,'VotingSystem::OPLElection']]],
+  ['readballots_251',['readBallots',['../classVotingSystem_1_1IRElection.html#af1a052476bfa314109810b6dbf3ab35e',1,'VotingSystem::IRElection::readBallots()'],['../classVotingSystem_1_1OPLElection.html#af31c0c33d149ad9c805784061b262a72',1,'VotingSystem::OPLElection::readBallots()'],['../classVotingSystem_1_1POElection.html#a4b4939f275a82334eb9e093b88e36fcd',1,'VotingSystem::POElection::readBallots()']]],
+  ['readheader_252',['readHeader',['../classVotingSystem_1_1Election.html#a80ccb7a8c3e1b092e1666cea16c2b7c3',1,'VotingSystem::Election::readHeader()'],['../classVotingSystem_1_1IRElection.html#aafd99dcd6543dc0c3c58888cc717485c',1,'VotingSystem::IRElection::readHeader()'],['../classVotingSystem_1_1OPLElection.html#a530a6a694d765a9c2bb391a125c8a18c',1,'VotingSystem::OPLElection::readHeader()'],['../classVotingSystem_1_1POElection.html#ac83d493c5abdb99d6ce82c15e4313a34',1,'VotingSystem::POElection::readHeader()']]],
+  ['redistribute_253',['redistribute',['../classVotingSystem_1_1IRElection.html#a73d71d5cfa87b86c436a85bb3717923f',1,'VotingSystem::IRElection']]],
+  ['removeauditfile_254',['removeAuditFile',['../classVotingSystem_1_1Election.html#a2ca767d2e18fb2c7a0d9ff699440261b',1,'VotingSystem::Election']]],
+  ['run_255',['run',['../classVotingSystem_1_1Election.html#a019d95188c8f3d6ea2ea74c388e3e962',1,'VotingSystem::Election::run()'],['../classVotingSystem_1_1IRElection.html#abc4161143eace6ad7dfde4c2b623de57',1,'VotingSystem::IRElection::run()'],['../classVotingSystem_1_1OPLElection.html#a6abd6eeae25561344138c6eda56d4436',1,'VotingSystem::OPLElection::run()'],['../classVotingSystem_1_1POElection.html#aaa81992c96b0c27905aeeaefbec90020',1,'VotingSystem::POElection::run()']]],
+  ['runrunoff_256',['runRunoff',['../classVotingSystem_1_1IRElection.html#ab9cbd175bc0deae2a038304b9733f281',1,'VotingSystem::IRElection']]]
+];
