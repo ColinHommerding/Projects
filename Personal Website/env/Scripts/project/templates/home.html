@@ -1,0 +1,55 @@
+{% include 'navbar.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles/homeStyle.css' %}">
+<title>Home</title>
+<section class="home">
+        <center>
+            <font size="6">
+
+<p>ABOUT ME </p>
+
+            </font>
+
+            <font size="4">
+
+<p>My name is Colin Hommerding. I graduated with Distinction from the University of Minnesota-Twin Cities with a Bachelor of Science in Computer Science in two years. I love computer science, technology, and software. I know many languages including Java, Python, C/C++, JavaScript, Ocaml, and many others. I have completed multiple projects. These include a JavaScript Wordle game, Prizepicks Prop Finder, Voting System, 3D Maze Game, Word Length Counter using a server and clients, and Hangman Game.</p>
+
+            </font>
+        </center>
+ <center>
+            <font size="6">
+
+<p>PROJECTS</p>
+
+            </font>
+
+            <font size="4">
+
+<p>The code for the projects I have completed can be found at this github: <a href="https://github.com/ColinHommerding/Projects.git">https://github.com/ColinHommerding/Projects.git</a> <br> This website features two of those projects</p>
+        </font>
+        </center>
+<center>
+            <font size="6">
+
+<p>WORDLE</p>
+
+            </font>
+
+            <font size="4">
+
+<p>The first of those featured projects is the Javascript Wordle Game which can be accessed by clicking on the wordle tab at the top of the screen. Wordle starts by selecting a random 5 letter english word that you have to try and guess. Enter in a 5 letter word that you wish to guess by clicking on the letters in the on-screen keyboard. If you mistype, the delete button will remove your most recently selected letter. Once you have the word typed in, select enter to try your guess. Wordle will respond by highlighting the letters you selected in yellow and green. Yellow letters mean that the letter you guessed is in the answer but you have it in the wrong spot. A green letter means the letter you guessed is in the answer and in the correct spot. If a letter does not get highlighted and its background remains white that means that particular letter does not appear in the word. That letter will then be grayed out on the keyboard to signify it is not in the answer, but you can still use the letter in future guesses. You have 6 total guesses to guess the answer word. If you get the answer correct, all letters will be highlighted in green and the game will tell you that you won. If you go all 6 guesses without getting the word, the game will tell you that you lost and reveal what the answer word was.</p>
+           </font>
+        </center>
+<center>
+            <font size="6">
+
+<p>PRIZEPICKS PROP FINDER</p>
+
+            </font>
+
+            <font size="4">
+
+<p>The second featured project on this website is the PrizePicks Prop Finder. It can be accessed by selecting the PrizePicks Prop Finder tab at the top of the screen. Prizepicks is a daily fantasy sports site/app. They offer fixed odds where users take the over or under on different player props. Fixed odds mean that for each entry type the payouts do not shift depending on which player props the user selects or depending on if the user selects the over or under on the props. The most optimal entry type with the best fixed odds is 5 or 6 player prop entries that contain 5 or 6 player props with an over or under selected. Users will place wagers on these 5/6 player prop entries and the goal is to correctly predict whether each player prop will go over or under its line to win a return on the wager. The odds on these types of entries for each player prop are -119. The PrizePicks prop finder tool will scrape PrizePicks for the props and then scrape odds data from Draft Kings sportsbook. Sportsbook odds are real time market data that give a very accurate picture of a players chances to go over or under a certain line. Sportsbooks like Draft Kings juice their odds to make money so on Draft Kings being favored at around -140 is roughly equal to actually being favored at -119 odds. To account for the juiced odds on Draft Kings, we want player props that are favored on Draft Kings at approximately -140 odds or better to go over or under a particular player prop line. This is in order to beat the -119 odds given for each player prop on PrizePicks in 5/6 prop entries. For example if the Minnesota Twins pitcher Sonny Gray was -140 or better to go over 4.5 strikeouts then his over 4.5 strikeouts would be a great play on Prizepicks. If only player props with approximately -140 odds or better are played in 5/6 player prop entries then a user will be profitable long term. So this tool will gather the props from Prizepicks and real time odds from DraftKings. It then compiles them into a table where it will highlight the mathematically long term profitable plays in green and the long term non-profitable plays in red.</p>
+            </font>
+        </center>
+</section>

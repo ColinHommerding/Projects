@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+{% include 'navbar.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles/homeStyle.css' %}">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      var answer = "";
+      var newAnswer = "";
+      var guess = "";
+      var count = 1;
+      var upperCap = 6;
+      var lowerCap = 1;
+      var end = 0;
+
+      $(document).ready(function(){
+       jQuery.get("{% static 'text/fiveLetterWords.txt' %}", function(data) {
+        var randomNum = Math.floor(Math.random() * 15908);
+        var lines = data.split("\n");
+
+        jQuery.get("{% static 'text/answerWords.txt' %}", function(data) {
+         var randomNumAnswers = Math.floor(Math.random() * 2001);
+         var linesAnswers = data.split("\n");
+         answer = linesAnswers[randomNumAnswers];
+         answer = answer.toLowerCase();
+
+         $(".boxKey").click(function(){
+          $("#" + count).html(jQuery(this).html());
+          if(count < upperCap) {
+           guess = guess + jQuery(this).html();
+           count++
+          }
+         });
+
+         $(".deleteKey").click(function(){
+          if(count > lowerCap) {
+           guess = guess.slice(0,-1);
+           count--
+          };
+          $("#" + count).html("");
+         });
+
+         $(".enterKey").click(function(){
+          if(end == 0) {
+           var check = 0;
+           if(count == upperCap) {
+            guess = guess.toLowerCase();
+            for(var j = 0; j < 15908; j++) {
+             if(guess.substring(0,5) === lines[j].substring(0,5)){
+              check++;
+             }
+            }
+            if(check == 1) {
+             for(var i = 0; i < 5; i++){
+              if(answer[i] === guess[i]) {
+               $("#" + (i + lowerCap)).css("background-color", "green");
+              }
+              else{
+               newAnswer = newAnswer + answer[i];
+              }
+             }
+             for(var i = 0; i < 5; i++){
+              if(newAnswer.search(guess[i]) != -1 ) {
+               if($("#" + (i + lowerCap)).css('background-color') =="rgb(255, 255, 255)"){
+                $("#" + (i + lowerCap)).css("background-color", "yellow");
+                newAnswer = newAnswer.substring(0,newAnswer.search(guess[i])) + newAnswer.substring(newAnswer.search(guess[i]) + 1);
+               }
+              }
+             }
+            if(answer.substring(0,5) === guess.substring(0,5)) {
+             $(".winLose").html("You win!!!!!! Refresh to Play Again");
+             for(var e = lowerCap; e < upperCap; e++) {
+              if($("#" + e).css('background-color') =="rgb(255, 255, 255)") {
+               if($("#" + $("#" + e).html().toLowerCase()).css('background-color') != "rgb(255, 255, 0)") {
+                if($("#" + $("#" + e).html().toLowerCase()).css('background-color') != "rgb(0, 128, 0)") {
+                 $("#" + $("#" + e).html().toLowerCase()).attr("class", "usedKey");
+                }
+               }
+              }
+              if($("#" + e).css('background-color') =="rgb(255, 255, 0)") {
+               if($("#" + $("#" + e).html().toLowerCase()).css('background-color') != "rgb(0, 128, 0)") {
+                $("#" + $("#" + e).html().toLowerCase()).attr("class", "yellowKey");
+               }
+              }
+              if($("#" + e).css('background-color') =="rgb(0, 128, 0)") {
+               $("#" + $("#" + e).html().toLowerCase()).attr("class", "greenKey");
+              }
+             }
+             guess = "";
+             newAnswer = "";
+             upperCap = upperCap + 200;
+             lowerCap = lowerCap + 200;
+             count = count + 200;
+             end++
+            }
+            else{
+             if(count == 56) {
+              $(".winLose").html("You lose!!!!!! The word was " + answer + ". Refresh to Play Again!");
+              for(var e = lowerCap; e < upperCap; e++) {
+               if($("#" + e).css('background-color') =="rgb(255, 255, 255)") {
+                if($("#" + $("#" + e).html().toLowerCase()).css('background-color') != "rgb(255, 255, 0)") {
+                 if($("#" + $("#" + e).html().toLowerCase()).css('background-color') != "rgb(0, 128, 0)") {
+                  $("#" + $("#" + e).html().toLowerCase()).attr("class", "usedKey");
+                 }
+                }
+               }
+               if($("#" + e).css('background-color') =="rgb(255, 255, 0)") {
+                if($("#" + $("#" + e).html().toLowerCase()).css('background-color') != "rgb(0, 128, 0)") {
+                 $("#" + $("#" + e).html().toLowerCase()).attr("class", "yellowKey");
+                }
+               }
+               if($("#" + e).css('background-color') =="rgb(0, 128, 0)") {
+                $("#" + $("#" + e).html().toLowerCase()).attr("class", "greenKey");
+               }
+              }
+              guess = "";
+              newAnswer = "";
+              upperCap = upperCap + 200;
+              lowerCap = lowerCap + 200;
+              count = count + 200;
+              end++;
+             }
+             else{
+              for(var e = lowerCap; e < upperCap; e++) {
+               if($("#" + e).css('background-color') =="rgb(255, 255, 255)") {
+                if($("#" + $("#" + e).html().toLowerCase()).css('background-color') != "rgb(255, 255, 0)") {
+                 if($("#" + $("#" + e).html().toLowerCase()).css('background-color') != "rgb(0, 128, 0)") {
+                  $("#" + $("#" + e).html().toLowerCase()).attr("class", "usedKey");
+                 }
+                }
+               }
+               if($("#" + e).css('background-color') =="rgb(255, 255, 0)") {
+                if($("#" + $("#" + e).html().toLowerCase()).css('background-color') != "rgb(0, 128, 0)") {
+                 $("#" + $("#" + e).html().toLowerCase()).attr("class", "yellowKey");
+                }
+               }
+               if($("#" + e).css('background-color') =="rgb(0, 128, 0)") {
+                $("#" + $("#" + e).html().toLowerCase()).attr("class", "greenKey");
+               }
+              }
+             }
+             guess = "";
+             newAnswer = "";
+             upperCap = upperCap + 10;
+             lowerCap = lowerCap + 10;
+             count = count + 5;
+            }
+           }
+          else {
+           alert("Not a Valid Word. Guess Again.");
+          }
+         }
+        }
+       });
+      });
+     });
+    });
+    </script>
+    <title>Wordle Game</title>
+    <h1> Wordle
+    <center>Instructions for the game are located under the WORDLE header on the home page</center>
+    </h1>
+    <link rel="stylesheet" href="{% static 'styles/wordleStyle.css' %}">
+</head>
+<body>
+    <div class="parent">
+     <div id = "1" class="box"></div>
+     <div id = "2" class="box"></div>
+     <div id = "3" class="box"></div>
+     <div id = "4" class="box"></div>
+     <div id = "5" class="box"></div>
+     </div>
+    <div class="parentAlt">
+     <div id = "11" class="box"></div>
+     <div id = "12" class="box"></div>
+     <div id = "13" class="box"></div>
+     <div id = "14" class="box"></div>
+     <div id = "15" class="box"></div>
+     </div>
+    <div class="parentAlt">
+     <div id = "21" class="box"></div>
+     <div id = "22" class="box"></div>
+     <div id = "23" class="box"></div>
+     <div id = "24" class="box"></div>
+     <div id = "25" class="box"></div>
+    </div>
+    <div class="parentAlt">
+     <div id = "31" class="box"></div>
+     <div id = "32" class="box"></div>
+     <div id = "33" class="box"></div>
+     <div id = "34" class="box"></div>
+     <div id = "35" class="box"></div>
+     </div>
+    <div class="parentAlt">
+     <div id = "41" class="box"></div>
+     <div id = "42" class="box"></div>
+     <div id = "43" class="box"></div>
+     <div id = "44"class="box"></div>
+     <div id = "45"class="box"></div>
+    </div>
+    <div class="parentAlt">
+     <div id = "51"class="box"></div>
+     <div id = "52"class="box"></div>
+     <div id = "53"class="box"></div>
+     <div id = "54"class="box"></div>
+     <div id = "55" class="box"></div>
+     </div>
+    <div class ="winLose">
+    </div>
+    <div class="parentKeyboard">
+     <div id = "q" class="boxKey">Q</div>
+     <div id = "w" class="boxKey">W</div>
+     <div id = "e" class="boxKey">E</div>
+     <div id = "r" class="boxKey">R</div>
+     <div id = "t" class="boxKey">T</div>
+     <div id = "y" class="boxKey">Y</div>
+     <div id = "u" class="boxKey">U</div>
+     <div id = "i" class="boxKey">I</div>
+     <div id = "o" class="boxKey">O</div>
+     <div id = "p" class="boxKey">P</div>
+    </div>
+    <div class="parentKeyboardAlt">
+     <div id = "a" class="boxKey">A</div>
+     <div id = "s" class="boxKey">S</div>
+     <div id = "d" class="boxKey">D</div>
+     <div id = "f" class="boxKey">F</div>
+     <div id = "g" class="boxKey">G</div>
+     <div id = "h" class="boxKey">H</div>
+     <div id = "j" class="boxKey">J</div>
+     <div id = "k" class="boxKey">K</div>
+     <div id = "l" class="boxKey">L</div>
+    </div>
+    <div class="parentKeyboardAlt">
+     <div class="enterKey"><div style = "font-size: 80%;">Enter</div></div>
+     <div id = "z" class="boxKey">Z</div>
+     <div id = "x" class="boxKey">X</div>
+     <div id = "c" class="boxKey">C</div>
+     <div id = "v" class="boxKey">V</div>
+     <div id = "b" class="boxKey">B</div>
+     <div id = "n" class="boxKey">N</div>
+     <div id = "m" class="boxKey">M</div>
+     <div class="deleteKey"><div style = "font-size: 65%;">Delete</div></div>
+    </div>
+</body>
+</html>
